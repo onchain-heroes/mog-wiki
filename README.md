@@ -44,7 +44,7 @@ See [the stack decision](docs/architecture.md) and [the publishing policy](docs/
 
 ## Publish with GitHub and Vercel
 
-The wiki is hosted at [mog-wiki.vercel.app](https://mog-wiki.vercel.app), with public source in [slkzgm/mog-wiki](https://github.com/slkzgm/mog-wiki).
+The wiki is hosted at [wiki.playmog.xyz](https://wiki.playmog.xyz) on the Onchain Heroes Vercel team, with public source in [onchain-heroes/mog-wiki](https://github.com/onchain-heroes/mog-wiki).
 
 The Git integration uses `main` for production and pull requests for preview deployments. Hosting serves **only `dist/`**. The public repository also exposes tracked maintainer files, so review both source and build artifacts before publication. Never upload `.local/` or private recording tools.
 
@@ -58,7 +58,7 @@ The Git integration uses `main` for production and pull requests for preview dep
 | Build command                | `pnpm run build`                   |
 | Output directory             | `dist`                             |
 
-The install command, build command and output directory are declared in `vercel.json`. Astro's `site` URL is `https://mog-wiki.vercel.app`; Starlight supplies the sitemap integration. Production pages allow indexing. Builds with `VERCEL_ENV=preview` retain `noindex, nofollow` metadata. Crawler directives **are not access control**; confidential previews require hosting-provider protection.
+The install command, build command and output directory are declared in `vercel.json`. Astro's `site` URL is `https://wiki.playmog.xyz`; Starlight supplies the sitemap integration. Production pages allow indexing. Builds with `VERCEL_ENV=preview` retain `noindex, nofollow` metadata. Crawler directives **are not access control**; confidential previews require hosting-provider protection.
 
 For an authorized release, run validation, review the pull request and its preview, then merge to `main`. Confirm that Vercel built the intended commit and check the production pages, language links, search and media. GitHub CI passing does not establish that the Vercel deployment succeeded. Future publication and deployment actions require authorization; local edits alone do not grant it.
 

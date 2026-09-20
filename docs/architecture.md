@@ -36,11 +36,11 @@ Dependencies are pinned in `package.json` and `pnpm-lock.yaml`. Node is pinned i
 
 ## Publication configuration
 
-The public repository is [slkzgm/mog-wiki](https://github.com/slkzgm/mog-wiki), with [mog-wiki.vercel.app](https://mog-wiki.vercel.app) as the production address. The GitHub-to-Vercel workflow assigns `main` to production and pull requests to preview deployments.
+The public repository is [onchain-heroes/mog-wiki](https://github.com/onchain-heroes/mog-wiki), with [wiki.playmog.xyz](https://wiki.playmog.xyz) as the production address on the Onchain Heroes Vercel team. The GitHub-to-Vercel workflow assigns `main` to production and pull requests to preview deployments.
 
 Vercel serves the static `dist/` output. `vercel.json` sets a locked `pnpm install --frozen-lockfile` installation and `pnpm run build`; no server adapter or runtime backend is required. The host uses Node `24.x`, while local development pins `24.20.0`. The project's `ENABLE_EXPERIMENTAL_COREPACK=1` setting selects pnpm `11.24.0` through the `packageManager` declaration.
 
-Astro's `site` is fixed to `https://mog-wiki.vercel.app`. Starlight's integrated sitemap uses this canonical origin. Production is indexable; `VERCEL_ENV=preview` builds retain `noindex, nofollow` metadata. These directives do not protect confidential content. Tracked source and maintainer documents are public independently of whether they become site routes; private evidence and capture tooling remain ignored.
+Astro's `site` is fixed to `https://wiki.playmog.xyz`. Starlight's integrated sitemap uses this canonical origin. Production is indexable; `VERCEL_ENV=preview` builds retain `noindex, nofollow` metadata. These directives do not protect confidential content. Tracked source and maintainer documents are public independently of whether they become site routes; private evidence and capture tooling remain ignored.
 
 For future releases, obtain publication authorization, run the full validation suite, review the pull request preview, and merge to `main`. Check the deployed commit and the hosted pages, search, language navigation and media after Vercel reports success. Local validation, GitHub CI and deployment verification are separate checks. Neither deployment nor local recordings prove current live-game behavior.
 

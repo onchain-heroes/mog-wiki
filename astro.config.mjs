@@ -3,7 +3,7 @@ import starlight from '@astrojs/starlight';
 import locales from './src/i18n/locales.json' with { type: 'json' };
 
 export default defineConfig({
-  site: 'https://mog-wiki.vercel.app',
+  site: 'https://wiki.playmog.xyz',
   output: 'static',
   trailingSlash: 'always',
   integrations: [

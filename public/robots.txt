@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://mog-wiki.vercel.app/sitemap-index.xml
+Sitemap: https://wiki.playmog.xyz/sitemap-index.xml
