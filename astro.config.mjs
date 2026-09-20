@@ -13,7 +13,7 @@ export default defineConfig({
       ),
       description:
         'A quick reference for your next run through the Maze of Gains.',
-      favicon: '/favicon.svg',
+      favicon: '/favicon.png',
       customCss: ['./src/styles/custom.css'],
       defaultLocale: 'root',
       locales: Object.fromEntries(
