@@ -36,7 +36,7 @@ Dependencies are pinned in `package.json` and `pnpm-lock.yaml`. Node is pinned i
 
 ## Publication configuration
 
-The public repository is [slkzgm/mog-wiki](https://github.com/slkzgm/mog-wiki), with [mog-wiki.vercel.app](https://mog-wiki.vercel.app) reserved as the production address. The GitHub-to-Vercel workflow assigns `main` to production and pull requests to preview deployments. This describes the configuration and release procedure, not evidence of a successful deployment.
+The public repository is [slkzgm/mog-wiki](https://github.com/slkzgm/mog-wiki), with [mog-wiki.vercel.app](https://mog-wiki.vercel.app) as the production address. The GitHub-to-Vercel workflow assigns `main` to production and pull requests to preview deployments.
 
 Vercel serves the static `dist/` output. `vercel.json` sets a locked `pnpm install --frozen-lockfile` installation and `pnpm run build`; no server adapter or runtime backend is required. The host uses Node `24.x`, while local development pins `24.20.0`. The project's `ENABLE_EXPERIMENTAL_COREPACK=1` setting selects pnpm `11.24.0` through the `packageManager` declaration.
 

@@ -44,7 +44,7 @@ See [the stack decision](docs/architecture.md) and [the publishing policy](docs/
 
 ## Publish with GitHub and Vercel
 
-The public source repository is [slkzgm/mog-wiki](https://github.com/slkzgm/mog-wiki). The production address is reserved at [mog-wiki.vercel.app](https://mog-wiki.vercel.app). These links identify the publication targets; a successful deployment must be verified separately.
+The wiki is hosted at [mog-wiki.vercel.app](https://mog-wiki.vercel.app), with public source in [slkzgm/mog-wiki](https://github.com/slkzgm/mog-wiki).
 
 The Git integration uses `main` for production and pull requests for preview deployments. Hosting serves **only `dist/`**. The public repository also exposes tracked maintainer files, so review both source and build artifacts before publication. Never upload `.local/` or private recording tools.
 
