@@ -1,0 +1,53 @@
+---
+title: 날씨와 위험 요소
+description: 플레이 중 표시되는 날씨 효과를 알아보세요.
+visibility: public
+lastUpdated: 2026-09-20
+knowledgeScope: player-visible
+gameMode: arcade
+evidence: observable-gameplay
+sidebar:
+  order: 3
+---
+
+import TurnDemo from '../../../../components/TurnDemo.astro';
+
+**날씨 표시**를 열어 현재 층에 적용된 효과를 읽어 보세요. 구역별 날씨는 해당 층을 떠날 때까지 지속되며 일반 날씨는 일시적입니다.
+
+## 독기
+
+적의 공격이 **중독**을 걸어 지속 피해를 줍니다. 다시 맞으면 효과의 지속 시간이 갱신됩니다.
+
+<TurnDemo kind="miasma" />
+
+## 눈보라
+
+획득물이 얼어붙어 내용을 확인하거나 획득할 수 없게 됩니다. **얼어붙은 획득물에 한 번 부딪혀** 얼음을 깨세요. 기다려도 저절로 녹지 않습니다.
+
+적의 공격은 **동상**을 걸 수도 있습니다. 동상이 지속되는 동안에는 공격에도 에너지가 듭니다. 다시 맞으면 동상의 지속 시간이 갱신됩니다.
+
+<TurnDemo kind="ice" />
+
+## 폭염
+
+**신기루** 때문에 많은 적의 공격 준비 시간을 예측하기 어려워집니다. 공격 예고는 계속 표시됩니다.
+
+적의 공격은 지속 피해를 주는 **화상**도 겁니다.
+
+<TurnDemo kind="heatwave" />
+
+## 강풍
+
+돌풍이 플레이어, 적, 바닥 획득물을 바람 방향으로 한 칸 밀어냅니다. 뿌리내린 적은 제자리에 남습니다.
+
+<TurnDemo kind="gale" />
+
+## 폭풍
+
+번개가 칸을 표시한 뒤 다음 턴에 내리칩니다. **번개가 떨어지기 전에 표시된 칸에서 벗어나세요.** 번개는 플레이어와 적 모두에게 피해를 줄 수 있습니다.
+
+<TurnDemo kind="lightning" />
+
+## 바닥 함정
+
+[가시](/ko/reference/cells/#spikes), [벽 화살 함정](/ko/reference/cells/#wall-arrow-traps), [용암](/ko/reference/cells/#lava)은 날씨와 별개인 위험 요소입니다. 건너기 전에 해당 항목을 읽어 보세요. 공격하거나 기다려도 턴은 진행됩니다. 지금 가시가 내려가 있다고 해서 다음 행동 후에도 내려가 있으리라는 보장은 없습니다.

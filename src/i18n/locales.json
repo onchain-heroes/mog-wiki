@@ -1,0 +1,8 @@
+{
+  "en": { "label": "English", "lang": "en", "title": "MoG Field Guide" },
+  "fr": { "label": "Français", "lang": "fr", "title": "Guide MoG" },
+  "es": { "label": "Español", "lang": "es", "title": "Guía de MoG" },
+  "ja": { "label": "日本語", "lang": "ja", "title": "MoG 冒険ガイド" },
+  "ko": { "label": "한국어", "lang": "ko", "title": "MoG 모험 가이드" },
+  "zh-cn": { "label": "简体中文", "lang": "zh-CN", "title": "MoG 冒险指南" }
+}

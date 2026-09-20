@@ -1,0 +1,137 @@
+[
+  {
+    "id": "single-shot",
+    "name": "Single Shot",
+    "appearance": "",
+    "behavior": "Fires a straight shot that hits the first enemy in its path. Two uses.",
+    "response": "Line up a clear row or column toward your target.",
+    "warning": "Walls stop the shot, and targets must be within view.",
+    "category": "active"
+  },
+  {
+    "id": "pogo-stick",
+    "name": "Pogo Stick",
+    "appearance": "",
+    "behavior": "Jumps to a nearby open tile, including across walls. Two uses.",
+    "response": "Choose a clear landing tile to cross an obstacle or change position.",
+    "warning": "Unavailable in special rooms and the final boss arena.",
+    "category": "active"
+  },
+  {
+    "id": "shock-grenade",
+    "name": "Shock Grenade",
+    "appearance": "",
+    "behavior": "Stuns enemies in the targeted area. Two uses.",
+    "response": "Use it to interrupt a group, including ghosts, while you reposition.",
+    "warning": "It deals no damage and cannot stun the final boss.",
+    "category": "active"
+  },
+  {
+    "id": "chain-hook",
+    "name": "Chain Hook",
+    "appearance": "",
+    "behavior": "Pulls the first enemy in a line toward you and stuns it. Two uses.",
+    "response": "Use a clear line to bring a distant enemy within reach.",
+    "warning": "Bosses cannot be hooked. If the destination is blocked, the target is stunned without being pulled.",
+    "category": "active"
+  },
+  {
+    "id": "bomb",
+    "name": "Bomb",
+    "appearance": "",
+    "behavior": "Places a delayed explosion on a nearby tile, damaging the surrounding area.",
+    "response": "Place it near enemies or breakable objects, then leave the blast area.",
+    "warning": "The explosion can hurt you too.",
+    "category": "active"
+  },
+  {
+    "id": "magnet",
+    "name": "Magnet",
+    "appearance": "",
+    "behavior": "Collects nearby loose drops without walking onto each one.",
+    "response": "Use it when several drops are within reach.",
+    "warning": "It does not collect consumable item drops into your inventory.",
+    "category": "active"
+  },
+  {
+    "id": "midas-touch",
+    "name": "Midas Touch",
+    "appearance": "",
+    "behavior": "Arms your next eligible strike to turn an enemy into a gold statue. Break the statue for treasure.",
+    "response": "Activate it before striking the enemy you want to neutralize.",
+    "warning": "Bosses and enemies carrying special-room stairs cannot be transformed; the effect stays ready for another target.",
+    "category": "active"
+  },
+  {
+    "id": "pocket-portal",
+    "name": "Pocket Portal",
+    "appearance": "",
+    "behavior": "Teleports you to a random room on the current floor. Two uses.",
+    "response": "Use it when you want to leave your current position without choosing the destination.",
+    "warning": "Unavailable in special rooms and the final boss arena.",
+    "category": "active"
+  },
+  {
+    "id": "chain-shot",
+    "name": "Chain Shot",
+    "appearance": "",
+    "behavior": "Fires a straight shot. A kill with the first shot grants one extra shot.",
+    "response": "Aim the first shot at an enemy you can finish.",
+    "warning": "Without a kill, there is no second shot. The bonus shot does not chain into more shots.",
+    "category": "active"
+  },
+  {
+    "id": "piercing-shot",
+    "name": "Piercing Shot",
+    "appearance": "",
+    "behavior": "Fires through several enemies in a straight line.",
+    "response": "Line up enemies in the same row or column before firing.",
+    "warning": "Walls stop the shot, and targets must be within view.",
+    "category": "active"
+  },
+  {
+    "id": "switcher",
+    "name": "Switcher",
+    "appearance": "",
+    "behavior": "Swaps your position with a visible enemy.",
+    "response": "Choose the enemy whose tile gives you the position you need.",
+    "warning": "Cannot target bosses and is unavailable in special rooms, including the final boss arena.",
+    "category": "active"
+  },
+  {
+    "id": "decoy",
+    "name": "Decoy",
+    "appearance": "",
+    "behavior": "Places a temporary lure that draws ordinary enemies toward it. Two uses.",
+    "response": "Put it on a nearby open tile to draw attention away while you reposition.",
+    "warning": "Placing another lure replaces the first. Sir Jackalot does not follow it.",
+    "category": "active"
+  },
+  {
+    "id": "talisman",
+    "name": "Talisman",
+    "appearance": "",
+    "behavior": "Captures a visible ghost and removes it. Three uses.",
+    "response": "Use it to clear a ghost from a blocked route.",
+    "warning": "It targets ghosts, not ordinary enemies.",
+    "category": "active"
+  },
+  {
+    "id": "escape-rope",
+    "name": "Escape Rope",
+    "appearance": "",
+    "behavior": "Leaves the current floor for a Shrine or Armory.",
+    "response": "Use it to leave a dangerous floor and reach a shop.",
+    "warning": "Unavailable in special rooms and the final boss arena. You leave uncollected loot behind.",
+    "category": "active"
+  },
+  {
+    "id": "sticky-bomb",
+    "name": "Sticky Bomb",
+    "appearance": "",
+    "behavior": "Attaches a delayed bomb to an enemy. The blast damages its carrier and nearby enemies.",
+    "response": "Attach it to a visible target near other enemies.",
+    "warning": "The bomb follows its carrier before detonating.",
+    "category": "active"
+  }
+]

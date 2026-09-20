@@ -1,0 +1,53 @@
+---
+title: Weather and hazards
+description: Recognize the weather effects shown during a run.
+visibility: public
+lastUpdated: 2026-09-20
+knowledgeScope: player-visible
+gameMode: arcade
+evidence: observable-gameplay
+sidebar:
+  order: 3
+---
+
+import TurnDemo from '../../../components/TurnDemo.astro';
+
+Open the **weather indicator** to read the effects currently affecting your floor. Biome weather lasts until you leave the floor; common weather is temporary.
+
+## Miasma
+
+Enemy attacks apply **poison**, which deals damage over time. Another hit refreshes the effect.
+
+<TurnDemo kind="miasma" />
+
+## Blizzard
+
+Drops can freeze, preventing you from revealing or collecting them. **Bump a frozen drop once** to crack its ice. Waiting does not thaw it.
+
+Enemy attacks can also apply **frostbite**, making your attacks cost Energy while the effect lasts. Another hit refreshes frostbite.
+
+<TurnDemo kind="ice" />
+
+## Heatwave
+
+**Mirage** makes attack charge timing less predictable for many enemies. Their attack cue is still shown.
+
+Enemy attacks also apply **burn**, which deals damage over time.
+
+<TurnDemo kind="heatwave" />
+
+## Gale
+
+Gusts push you, enemies, and loose drops one tile downwind. Rooted enemies stay in place.
+
+<TurnDemo kind="gale" />
+
+## Storm
+
+Lightning marks a tile before striking on the following turn. **Move off the mark before it lands.** Lightning can damage both you and enemies.
+
+<TurnDemo kind="lightning" />
+
+## Floor traps
+
+[Spikes](/reference/cells/#spikes), [wall-arrow traps](/reference/cells/#wall-arrow-traps) and [lava](/reference/cells/#lava) are dangers separate from weather. Read their entries before crossing. Attacking or waiting still advances a turn; a spike being down now does not guarantee it will stay down after your next action.

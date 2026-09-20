@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mog-wiki.vercel.app/sitemap-index.xml

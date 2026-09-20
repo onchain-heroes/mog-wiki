@@ -1,0 +1,53 @@
+---
+title: 天气与危险
+description: 识别冒险过程中显示的天气效果。
+visibility: public
+knowledgeScope: player-visible
+gameMode: arcade
+evidence: observable-gameplay
+lastUpdated: 2026-09-20
+sidebar:
+  order: 3
+---
+
+import TurnDemo from '../../../../components/TurnDemo.astro';
+
+打开**天气指示器**，查看当前影响本层的效果。区域天气持续到你离开该层，普通天气则是暂时的。
+
+## 瘴气
+
+敌人攻击会施加**中毒**，持续造成伤害。再次受击会刷新效果。
+
+<TurnDemo kind="miasma" />
+
+## 暴风雪
+
+掉落物可能被冻结，无法辨认或拾取。**撞击冰冻掉落物一次**即可破冰，等待不会使其解冻。
+
+敌人攻击还可能造成**冻伤**，使你在效果持续期间攻击也消耗能量。再次受击会刷新冻伤。
+
+<TurnDemo kind="ice" />
+
+## 热浪
+
+**海市蜃楼**会使许多敌人的攻击蓄力时机更难预测，但攻击预警仍然可见。
+
+敌人攻击还会施加**灼烧**，持续造成伤害。
+
+<TurnDemo kind="heatwave" />
+
+## 狂风
+
+阵风会将你、敌人和散落物向下风方向推移一格。扎根的敌人保持原位。
+
+<TurnDemo kind="gale" />
+
+## 风暴
+
+闪电会先标记一格，再于下一回合落下。**落雷前离开标记格**。闪电能够伤害你和敌人。
+
+<TurnDemo kind="lightning" />
+
+## 地面陷阱
+
+[地刺](/zh-cn/reference/cells/#spikes)、[墙壁箭陷阱](/zh-cn/reference/cells/#wall-arrow-traps)和[熔岩](/zh-cn/reference/cells/#lava)是独立于天气的危险。穿越前请阅读对应条目。攻击或等待仍会推进回合；地刺现在缩回，不代表下次行动后仍然安全。

@@ -1,0 +1,643 @@
+---
+import { getEntries, media, type CatalogueKind } from '../lib/catalogues';
+import { getLocale, localizedPath, ui } from '../i18n/ui';
+import { catalogueText } from '../i18n/catalogues';
+import { catalogueViewText } from '../i18n/catalogue-view';
+import { rarityText, type Rarity } from '../i18n/rarities';
+import Sprite from './Sprite.astro';
+import TalentIcon from './TalentIcon.astro';
+import { demoText, type DemoKind } from '../i18n/demos';
+const clips: Record<string, { page: string; kind: DemoKind }> = {
+  'exploding-mushroom': { page: 'enemies', kind: 'explosion' },
+  'chest-mimic': { page: 'enemies', kind: 'mimic' },
+  spikes: { page: 'cells', kind: 'spikes' },
+  fountains: { page: 'cells', kind: 'fountain' },
+  'frozen-pickups': { page: 'hazards', kind: 'ice' },
+  'lightning-warning': { page: 'hazards', kind: 'lightning' },
+};
+interface Props {
+  kind: CatalogueKind;
+}
+const { kind } = Astro.props;
+const locale = getLocale(Astro.locals.starlightRoute.lang);
+const t = ui[locale];
+const entries = getEntries(kind, locale);
+const isEnemy = kind === 'enemies';
+const extra = catalogueText[locale];
+const view = catalogueViewText[locale];
+const rarities = rarityText[locale];
+const categories = [
+  ...new Set(
+    entries.flatMap((entry) => (entry.category ? [entry.category] : [])),
+  ),
+];
+const categoryName = (category: string) =>
+  extra[category] ?? (t[category as keyof typeof t] as string);
+const searchLabel = isEnemy
+  ? t.searchEnemies
+  : kind === 'cells'
+    ? t.searchCells
+    : extra.search;
+const hasAnimation = entries.some((entry) => media[entry.id]?.frames > 1);
+---
+
+<wiki-catalogue data-kind={kind} data-layout="list">
+  <div class="catalogue-controls" data-pagefind-ignore hidden>
+    <label>
+      <span>{searchLabel}</span>
+      <input type="search" autocomplete="off" name="catalogue-search" />
+    </label>
+    <label>
+      <span>{isEnemy ? t.filterFloor : t.filterCategory}</span>
+      <select name="catalogue-filter">
+        <option value="">{isEnemy ? t.allFloors : extra.all}</option>
+        {isEnemy
+          ? Array.from({ length: 10 }, (_, i) => (
+              <option value={i + 1}>
+                {t.floors} {i + 1}
+              </option>
+            ))
+          : categories.map((category) => (
+              <option value={category}>{categoryName(category)}</option>
+            ))}
+      </select>
+    </label>
+    {kind === 'talents' && (
+      <label>
+        <span>{view.rarity}</span>
+        <select name="catalogue-rarity">
+          <option value="">{view.allRarities}</option>
+          {(Object.keys(rarities) as Rarity[]).map((rarity) => (
+            <option value={rarity}>{rarities[rarity]}</option>
+          ))}
+        </select>
+      </label>
+    )}
+    <div class="layout-toggle" role="group" aria-label={view.layout}>
+      {(['grid', 'list'] as const).map((layout) => (
+        <button
+          type="button"
+          data-layout-option={layout}
+          aria-pressed={layout === 'list' ? 'true' : 'false'}
+          aria-controls={`catalogue-browser-${kind}`}
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d={
+                layout === 'grid'
+                  ? 'M2 2h4v4H2zM10 2h4v4h-4zM2 10h4v4H2zM10 10h4v4h-4z'
+                  : 'M2 3h2M7 3h7M2 8h2M7 8h7M2 13h2M7 13h7'
+              }
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+            />
+          </svg>
+          {view[layout]}
+        </button>
+      ))}
+    </div>
+    {hasAnimation && (
+      <button
+        type="button"
+        class="animation-toggle"
+        aria-pressed="false"
+        data-play={t.showAnimation}
+        data-pause={t.pauseAnimation}
+      >
+        {t.showAnimation}
+      </button>
+    )}
+    <p class="catalogue-status" role="status" aria-live="polite">
+      <span data-count>{entries.length}</span> / {entries.length} {t.shown}
+    </p>
+  </div>
+  <p class="catalogue-empty" hidden data-pagefind-ignore>
+    {t.noResults}
+  </p>
+  <div class="catalogue-browser" id={`catalogue-browser-${kind}`}>
+    <nav class="icon-browser" aria-label={view[kind]} data-pagefind-ignore>
+      <p class="browse-hint">{view.choose}</p>
+      <div class="icon-grid">
+        {entries.map((entry) => (
+          <a
+            class="icon-card"
+            data-card
+            data-id={entry.id}
+            data-rarity={entry.rarity}
+            href={`#${entry.id}`}
+            aria-label={entry.name}
+            title={`${entry.name}${entry.rarity ? ` · ${rarities[entry.rarity]}` : ''}`}
+            aria-controls={`entry-${entry.id}`}
+          >
+            {entry.rarity ? (
+              <TalentIcon
+                id={entry.id}
+                rarity={entry.rarity}
+                label=""
+                size={64}
+              />
+            ) : (
+              <Sprite id={entry.id} label="" size={64} />
+            )}
+          </a>
+        ))}
+      </div>
+    </nav>
+    <div class="catalogue-entries">
+      {entries.map((entry) => (
+        <article
+          class="catalogue-entry"
+          id={`entry-${entry.id}`}
+          data-entry
+          data-id={entry.id}
+          data-floors={entry.floors?.join(' ') ?? ''}
+          data-category={entry.category ?? ''}
+          data-rarity={entry.rarity}
+          data-search={`${entry.name} ${entry.englishName} ${entry.appearance}`}
+        >
+          <button type="button" class="back-to-grid" data-back-to-grid hidden>
+            <span aria-hidden="true">←</span> {view.back}
+          </button>
+          <div class="entry-heading">
+            <div
+              class:list={[
+                'entry-art',
+                { 'talent-art': Boolean(entry.rarity) },
+              ]}
+            >
+              {entry.rarity ? (
+                <TalentIcon
+                  id={entry.id}
+                  rarity={entry.rarity}
+                  label={entry.name}
+                />
+              ) : (
+                <Sprite id={entry.id} label={entry.appearance || entry.name} />
+              )}
+            </div>
+            <div>
+              <h2 id={entry.id} tabindex="-1">
+                <a href={`#${entry.id}`}>{entry.name}</a>
+              </h2>
+              {locale !== 'en' && (
+                <p class="english-name" lang="en">
+                  {entry.englishName}
+                </p>
+              )}
+              <p class="entry-meta">
+                {[
+                  entry.rarity ? rarities[entry.rarity] : '',
+                  entry.role === 'boss'
+                    ? t.boss
+                    : entry.category
+                      ? categoryName(entry.category)
+                      : '',
+                  entry.floors?.length
+                    ? `${t.floors} ${entry.floors.join(', ')}`
+                    : '',
+                ]
+                  .filter(Boolean)
+                  .join(' · ')}
+              </p>
+            </div>
+          </div>
+          <dl>
+            <dt>{t.behavior}</dt>
+            <dd>{entry.behavior}</dd>
+            <dt>{t.response}</dt>
+            <dd>{entry.response}</dd>
+          </dl>
+          {entry.warning && (
+            <p class="entry-warning">
+              <strong>{t.warning}:</strong> {entry.warning}
+            </p>
+          )}
+          {clips[entry.id] && (
+            <p class="entry-clip">
+              <a
+                href={localizedPath(
+                  `/reference/${clips[entry.id].page}/#clip-${clips[entry.id].kind}`,
+                  locale,
+                )}
+              >
+                <span aria-hidden="true">▷</span>{' '}
+                {demoText[locale].demos[clips[entry.id].kind].title}
+              </a>
+            </p>
+          )}
+        </article>
+      ))}
+    </div>
+  </div>
+</wiki-catalogue>
+
+<script>
+  class WikiCatalogue extends HTMLElement {
+    #events?: AbortController;
+    connectedCallback() {
+      this.#events = new AbortController();
+      const { signal } = this.#events;
+      const controls = this.querySelector<HTMLElement>('.catalogue-controls')!;
+      const search = this.querySelector<HTMLInputElement>('input')!;
+      const filter = this.querySelector<HTMLSelectElement>(
+        '[name="catalogue-filter"]',
+      )!;
+      const rarity = this.querySelector<HTMLSelectElement>(
+        '[name="catalogue-rarity"]',
+      );
+      const entries = [...this.querySelectorAll<HTMLElement>('[data-entry]')];
+      const cards = new Map(
+        [...this.querySelectorAll<HTMLAnchorElement>('[data-card]')].map(
+          (card) => [card.dataset.id!, card],
+        ),
+      );
+      const count = this.querySelector<HTMLElement>('[data-count]')!;
+      const empty = this.querySelector<HTMLElement>('.catalogue-empty')!;
+      const animate =
+        this.querySelector<HTMLButtonElement>('.animation-toggle');
+      const layoutOptions = [
+        ...this.querySelectorAll<HTMLButtonElement>('[data-layout-option]'),
+      ];
+      const layoutKey = 'mog-wiki:catalogue-layout';
+      let grid = true;
+      try {
+        grid = localStorage.getItem(layoutKey) !== 'list';
+      } catch {
+        // The catalogue also works when browser storage is blocked.
+      }
+      const filterKey = this.dataset.kind === 'enemies' ? 'floor' : 'category';
+      const initial = new URLSearchParams(location.search).get(filterKey);
+      if (
+        initial &&
+        [...filter.options].some((option) => option.value === initial)
+      )
+        filter.value = initial;
+      let selected = entries[0]?.dataset.id;
+      const normalize = (text: string) =>
+        text
+          .normalize('NFD')
+          .replace(/\p{Diacritic}/gu, '')
+          .toLocaleLowerCase();
+      const update = () => {
+        this.dataset.layout = grid ? 'grid' : 'list';
+        for (const option of layoutOptions)
+          option.setAttribute(
+            'aria-pressed',
+            String(option.dataset.layoutOption === this.dataset.layout),
+          );
+        const query = normalize(search.value.trim());
+        const matches = entries.filter((entry) => {
+          const filters =
+            filterKey === 'floor'
+              ? entry.dataset.floors?.split(' ')
+              : [entry.dataset.category];
+          return (
+            normalize(entry.dataset.search ?? '').includes(query) &&
+            (!filter.value || filters?.includes(filter.value)) &&
+            (!rarity?.value || entry.dataset.rarity === rarity.value)
+          );
+        });
+        if (!matches.some((entry) => entry.dataset.id === selected))
+          selected = matches[0]?.dataset.id;
+        for (const entry of entries) {
+          const matched = matches.includes(entry);
+          const active = entry.dataset.id === selected;
+          entry.hidden = !matched || (grid && !active);
+          const card = cards.get(entry.dataset.id!);
+          if (card) {
+            card.hidden = !matched;
+            if (active && matched) card.setAttribute('aria-current', 'true');
+            else card.removeAttribute('aria-current');
+          }
+        }
+        count.textContent = String(matches.length);
+        empty.hidden = matches.length !== 0;
+      };
+      const revealHash = () => {
+        const target = entries.find(
+          (entry) => entry.dataset.id === location.hash.slice(1),
+        );
+        if (!target) {
+          if (grid && !location.hash) {
+            selected = undefined;
+            update();
+          }
+          return;
+        }
+        selected = target.dataset.id;
+        // A shared entry link takes precedence over an incompatible filter.
+        const card = cards.get(selected!);
+        if (card?.hidden || (!grid && target.hidden)) {
+          search.value = '';
+          filter.value = '';
+          if (rarity) rarity.value = '';
+        }
+        update();
+        if (grid)
+          target
+            .querySelector<HTMLElement>('h2')!
+            .focus({ preventScroll: true });
+        target.scrollIntoView({ block: 'nearest' });
+      };
+      const changeFilter = () => {
+        update();
+        if (entries.some((entry) => `#${entry.dataset.id}` === location.hash)) {
+          const url = new URL(location.href);
+          url.hash = selected ?? '';
+          history.replaceState(null, '', url);
+        }
+      };
+      search.addEventListener('input', changeFilter, { signal });
+      filter.addEventListener('change', changeFilter, { signal });
+      rarity?.addEventListener('change', changeFilter, { signal });
+      for (const option of layoutOptions)
+        option.addEventListener(
+          'click',
+          () => {
+            grid = option.dataset.layoutOption === 'grid';
+            update();
+            try {
+              localStorage.setItem(layoutKey, this.dataset.layout!);
+            } catch {
+              // Storage is optional; switching views must still work.
+            }
+          },
+          { signal },
+        );
+      for (const card of cards.values())
+        card.addEventListener(
+          'click',
+          (event) => {
+            if (
+              event.ctrlKey ||
+              event.metaKey ||
+              event.shiftKey ||
+              event.altKey
+            )
+              return;
+            event.preventDefault();
+            if (location.hash !== card.hash)
+              history.pushState(null, '', card.hash);
+            revealHash();
+          },
+          { signal },
+        );
+      for (const button of this.querySelectorAll<HTMLButtonElement>(
+        '[data-back-to-grid]',
+      )) {
+        button.hidden = false;
+        button.addEventListener('click', () => cards.get(selected!)?.focus(), {
+          signal,
+        });
+      }
+      animate?.addEventListener(
+        'click',
+        () => {
+          const playing = this.dataset.animate !== 'true';
+          this.dataset.animate = String(playing);
+          animate.setAttribute('aria-pressed', String(playing));
+          animate.textContent = playing
+            ? animate.dataset.pause!
+            : animate.dataset.play!;
+        },
+        { signal },
+      );
+      this.dataset.enhanced = 'true';
+      controls.hidden = false;
+      update();
+      revealHash();
+      window.addEventListener('hashchange', revealHash, { signal });
+    }
+    disconnectedCallback() {
+      this.#events?.abort();
+    }
+  }
+  customElements.define('wiki-catalogue', WikiCatalogue);
+</script>
+
+<style>
+  wiki-catalogue {
+    display: block;
+  }
+  .catalogue-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 0.75rem;
+    padding: 1rem;
+    margin-block: 1.5rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.6rem;
+    background: var(--sl-color-gray-7, var(--sl-color-gray-6));
+  }
+  [hidden] {
+    display: none !important;
+  }
+  label {
+    flex: 1 1 10rem;
+    font-size: 0.8rem;
+  }
+  label span {
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+  input,
+  select,
+  button {
+    border: 1px solid var(--sl-color-gray-4);
+    background: var(--sl-color-black);
+    color: var(--sl-color-white);
+    border-radius: 0.35rem;
+    font: inherit;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.65rem;
+  }
+  input,
+  select {
+    width: 100%;
+  }
+  button {
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+  .layout-toggle {
+    display: flex;
+    gap: 0.2rem;
+    margin: 0;
+  }
+  .layout-toggle button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    margin: 0;
+  }
+  .layout-toggle button[aria-pressed='true'] {
+    border-color: var(--sl-color-text-accent);
+    background: var(--sl-color-gray-5);
+    box-shadow: inset 0 0 0 1px var(--sl-color-text-accent);
+  }
+  [data-layout='list'] .icon-browser,
+  [data-layout='list'] .back-to-grid {
+    display: none;
+  }
+  .catalogue-status {
+    width: 100%;
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--sl-color-gray-2);
+    font-variant-numeric: tabular-nums;
+  }
+  .icon-browser {
+    margin-bottom: 1.5rem;
+    min-width: 0;
+  }
+  .browse-hint {
+    margin: 0 0 1rem;
+    font-size: 0.8rem;
+    color: var(--sl-color-gray-2);
+  }
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+    gap: 0.6rem;
+    align-content: start;
+  }
+  .icon-card {
+    display: grid;
+    place-items: center;
+    min-height: 80px;
+    padding: 7px;
+    margin: 0;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+    background: var(--sl-color-gray-6);
+    text-decoration: none;
+  }
+  .icon-card[aria-current='true'] {
+    border-color: var(--sl-color-text-accent);
+    outline: 2px solid var(--sl-color-text-accent);
+    outline-offset: 2px;
+  }
+  .icon-card:focus-visible {
+    outline-offset: 3px;
+  }
+  .catalogue-entry {
+    border-top: 1px solid var(--sl-color-gray-5);
+    padding-block: 1.5rem;
+  }
+  [data-enhanced='true'][data-layout='grid'] .catalogue-entry {
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.6rem;
+    padding: 1.25rem;
+    margin: 0;
+  }
+  .back-to-grid {
+    margin: 0 0 1.1rem;
+    min-height: 2rem;
+    padding: 0.25rem 0;
+    border: 0;
+    background: transparent;
+    color: var(--sl-color-text-accent);
+    text-align: start;
+  }
+  .back-to-grid:hover {
+    text-decoration: underline;
+  }
+  .entry-heading {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .entry-art {
+    display: grid;
+    place-items: center;
+    min-width: 96px;
+    min-height: 96px;
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.55rem;
+  }
+  .talent-art {
+    background: transparent;
+    border: 0;
+  }
+  .entry-heading h2 {
+    font-size: 1.35rem;
+    margin: 0;
+    scroll-margin-top: 6rem;
+  }
+  .entry-heading a {
+    color: var(--sl-color-white);
+    text-decoration: none;
+  }
+  .entry-heading a:hover {
+    text-decoration: underline;
+  }
+  .english-name,
+  .entry-meta {
+    font-size: 0.75rem;
+    color: var(--sl-color-gray-2);
+    margin-block: 0.25rem 0;
+  }
+  dl {
+    margin-block: 1rem 0;
+  }
+  dt {
+    font-size: 0.8rem;
+    font-weight: 650;
+    margin-top: 0.8rem;
+  }
+  dd {
+    margin: 0.2rem 0 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  .entry-clip {
+    font-size: 0.85rem;
+  }
+  .entry-warning {
+    background: var(--sl-color-accent-low);
+    border-left: 2px solid var(--sl-color-accent);
+    padding: 0.65rem 0.85rem;
+    font-size: 0.82rem;
+    line-height: 1.65;
+    border-radius: 0 0.3rem 0.3rem 0;
+    margin-block: 1rem 0;
+  }
+  @media (min-width: 60rem) {
+    [data-enhanced='true'][data-layout='grid'] .catalogue-browser {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: start;
+    }
+    [data-enhanced='true'][data-layout='grid'] .catalogue-entries {
+      position: sticky;
+      top: 6rem;
+      min-width: 0;
+    }
+    [data-enhanced='true'][data-layout='grid'] .entry-heading {
+      flex-wrap: wrap;
+    }
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .icon-card:hover {
+      border-color: var(--sl-color-gray-3);
+      background: var(--sl-color-gray-5);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animation-toggle {
+      display: none;
+    }
+  }
+</style>

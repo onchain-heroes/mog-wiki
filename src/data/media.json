@@ -1,0 +1,746 @@
+{
+  "small-slime": {
+    "src": "/media/enemies/small-slime.png",
+    "width": 88,
+    "height": 18,
+    "frameWidth": 22,
+    "frameHeight": 18,
+    "frames": 4
+  },
+  "orange-slime": {
+    "src": "/media/enemies/orange-slime.png",
+    "width": 128,
+    "height": 25,
+    "frameWidth": 32,
+    "frameHeight": 25,
+    "frames": 4
+  },
+  "bat": {
+    "src": "/media/enemies/bat.png",
+    "width": 128,
+    "height": 27,
+    "frameWidth": 32,
+    "frameHeight": 27,
+    "frames": 4
+  },
+  "club-skeleton": {
+    "src": "/media/enemies/club-skeleton.png",
+    "width": 120,
+    "height": 28,
+    "frameWidth": 30,
+    "frameHeight": 28,
+    "frames": 4
+  },
+  "armored-skeleton": {
+    "src": "/media/enemies/armored-skeleton.png",
+    "width": 112,
+    "height": 35,
+    "frameWidth": 28,
+    "frameHeight": 35,
+    "frames": 4
+  },
+  "skeleton-archer": {
+    "src": "/media/enemies/skeleton-archer.png",
+    "width": 116,
+    "height": 37,
+    "frameWidth": 29,
+    "frameHeight": 37,
+    "frames": 4
+  },
+  "whip-plant": {
+    "src": "/media/enemies/whip-plant.png",
+    "width": 108,
+    "height": 32,
+    "frameWidth": 27,
+    "frameHeight": 32,
+    "frames": 4
+  },
+  "large-whip-plant": {
+    "src": "/media/enemies/large-whip-plant.png",
+    "width": 124,
+    "height": 39,
+    "frameWidth": 31,
+    "frameHeight": 39,
+    "frames": 4
+  },
+  "blue-frog": {
+    "src": "/media/enemies/blue-frog.png",
+    "width": 112,
+    "height": 21,
+    "frameWidth": 28,
+    "frameHeight": 21,
+    "frames": 4
+  },
+  "frog-eggs": {
+    "src": "/media/enemies/frog-eggs.png",
+    "width": 176,
+    "height": 38,
+    "frameWidth": 44,
+    "frameHeight": 38,
+    "frames": 4
+  },
+  "hat-frog": {
+    "src": "/media/enemies/hat-frog.png",
+    "width": 156,
+    "height": 33,
+    "frameWidth": 39,
+    "frameHeight": 33,
+    "frames": 4
+  },
+  "exploding-mushroom": {
+    "src": "/media/enemies/exploding-mushroom.png",
+    "width": 80,
+    "height": 32,
+    "frameWidth": 20,
+    "frameHeight": 32,
+    "frames": 4
+  },
+  "lobbing-mushroom": {
+    "src": "/media/enemies/lobbing-mushroom.png",
+    "width": 136,
+    "height": 59,
+    "frameWidth": 34,
+    "frameHeight": 59,
+    "frames": 4
+  },
+  "party-hat-ghost": {
+    "src": "/media/enemies/party-hat-ghost.png",
+    "width": 104,
+    "height": 38,
+    "frameWidth": 26,
+    "frameHeight": 38,
+    "frames": 4
+  },
+  "pale-ghost": {
+    "src": "/media/enemies/pale-ghost.png",
+    "width": 104,
+    "height": 28,
+    "frameWidth": 26,
+    "frameHeight": 28,
+    "frames": 4
+  },
+  "hooded-ghost": {
+    "src": "/media/enemies/hooded-ghost.png",
+    "width": 112,
+    "height": 31,
+    "frameWidth": 28,
+    "frameHeight": 31,
+    "frames": 4
+  },
+  "flame-orb": {
+    "src": "/media/enemies/flame-orb.png",
+    "width": 84,
+    "height": 40,
+    "frameWidth": 21,
+    "frameHeight": 40,
+    "frames": 4
+  },
+  "orange-imp": {
+    "src": "/media/enemies/orange-imp.png",
+    "width": 112,
+    "height": 36,
+    "frameWidth": 28,
+    "frameHeight": 36,
+    "frames": 4
+  },
+  "dark-imp": {
+    "src": "/media/enemies/dark-imp.png",
+    "width": 128,
+    "height": 29,
+    "frameWidth": 32,
+    "frameHeight": 29,
+    "frames": 4
+  },
+  "chest-mimic": {
+    "src": "/media/enemies/chest-mimic.png",
+    "width": 128,
+    "height": 31,
+    "frameWidth": 32,
+    "frameHeight": 31,
+    "frames": 4
+  },
+  "pot-mimic": {
+    "src": "/media/enemies/pot-mimic.png",
+    "width": 92,
+    "height": 27,
+    "frameWidth": 23,
+    "frameHeight": 27,
+    "frames": 4
+  },
+  "sir-jackalot": {
+    "src": "/media/enemies/sir-jackalot.png",
+    "width": 1068,
+    "height": 120,
+    "frameWidth": 89,
+    "frameHeight": 120,
+    "frames": 12
+  },
+  "open-floor": {
+    "src": "/media/tiles/open-floor.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "walls": {
+    "src": "/media/tiles/walls.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "rocks": {
+    "src": "/media/tiles/rocks.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "wooden-walkways": {
+    "src": "/media/tiles/wooden-walkways.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "pots": {
+    "src": "/media/tiles/pots.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "crates": {
+    "src": "/media/tiles/crates.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "chests": {
+    "src": "/media/tiles/chests.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "floor-stairs": {
+    "src": "/media/tiles/floor-stairs.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "torches": {
+    "src": "/media/tiles/torches.png",
+    "width": 128,
+    "height": 16,
+    "frameWidth": 16,
+    "frameHeight": 16,
+    "frames": 8
+  },
+  "spikes": {
+    "src": "/media/tiles/spikes.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "wall-arrow-traps": {
+    "src": "/media/tiles/wall-arrow-traps.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "lava": {
+    "src": "/media/tiles/lava.png",
+    "width": 384,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 12
+  },
+  "lightning-warning": {
+    "src": "/media/tiles/lightning-warning.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "fountains": {
+    "src": "/media/tiles/fountains.png",
+    "width": 128,
+    "height": 64,
+    "frameWidth": 32,
+    "frameHeight": 64,
+    "frames": 4
+  },
+  "shrine": {
+    "src": "/media/tiles/shrine.png",
+    "width": 96,
+    "height": 96,
+    "frameWidth": 96,
+    "frameHeight": 96,
+    "frames": 1
+  },
+  "golden-corn": {
+    "src": "/media/tiles/golden-corn.png",
+    "width": 320,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 10
+  },
+  "special-room-stairs": {
+    "src": "/media/tiles/special-room-stairs.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "wall-portals": {
+    "src": "/media/tiles/wall-portals.png",
+    "width": 448,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 14
+  },
+  "unknown-trainer": {
+    "src": "/media/tiles/unknown-trainer.png",
+    "width": 768,
+    "height": 64,
+    "frameWidth": 64,
+    "frameHeight": 64,
+    "frames": 12
+  },
+  "armory-shopkeeper": {
+    "src": "/media/tiles/armory-shopkeeper.png",
+    "width": 256,
+    "height": 64,
+    "frameWidth": 64,
+    "frameHeight": 64,
+    "frames": 4
+  },
+  "armory-pedestals": {
+    "src": "/media/tiles/armory-pedestals.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "energy-orbs": {
+    "src": "/media/tiles/energy-orbs.png",
+    "width": 320,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 10
+  },
+  "loose-pickups": {
+    "src": "/media/tiles/loose-pickups.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "item-pickups": {
+    "src": "/media/tiles/item-pickups.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "frozen-pickups": {
+    "src": "/media/tiles/frozen-pickups.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "boss-reward-chest": {
+    "src": "/media/tiles/boss-reward-chest.png",
+    "width": 96,
+    "height": 96,
+    "frameWidth": 96,
+    "frameHeight": 96,
+    "frames": 1
+  },
+  "boss-exit-gate": {
+    "src": "/media/tiles/boss-exit-gate.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "apex-hunter": {
+    "src": "/media/talents/apex-hunter.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "glass-cannon": {
+    "src": "/media/talents/glass-cannon.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "sharp-blade": {
+    "src": "/media/talents/sharp-blade.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "berserker": {
+    "src": "/media/talents/berserker.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "cleave": {
+    "src": "/media/talents/cleave.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "poison-blade": {
+    "src": "/media/talents/poison-blade.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "critical-strike": {
+    "src": "/media/talents/critical-strike.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "frenzy": {
+    "src": "/media/talents/frenzy.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "merciless": {
+    "src": "/media/talents/merciless.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "reach": {
+    "src": "/media/talents/reach.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "heavy-hitter": {
+    "src": "/media/talents/heavy-hitter.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "apex-guard": {
+    "src": "/media/talents/apex-guard.png",
+    "width": 30,
+    "height": 32,
+    "frameWidth": 30,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "divine-shield": {
+    "src": "/media/talents/divine-shield.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "armor-plating": {
+    "src": "/media/talents/armor-plating.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "thorns": {
+    "src": "/media/talents/thorns.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "greed": {
+    "src": "/media/talents/greed.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "prospector": {
+    "src": "/media/talents/prospector.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "scavenger": {
+    "src": "/media/talents/scavenger.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "swift-steps": {
+    "src": "/media/talents/swift-steps.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "survival-instinct": {
+    "src": "/media/talents/survival-instinct.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "momentum": {
+    "src": "/media/talents/momentum.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "last-stand": {
+    "src": "/media/talents/last-stand.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "vampiric": {
+    "src": "/media/talents/vampiric.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "salvage": {
+    "src": "/media/talents/salvage.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "renewal": {
+    "src": "/media/talents/renewal.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "scout": {
+    "src": "/media/talents/scout.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "corruption": {
+    "src": "/media/talents/corruption.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "disrupt": {
+    "src": "/media/talents/disrupt.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "menace": {
+    "src": "/media/talents/menace.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "single-shot": {
+    "src": "/media/equipment/single-shot.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "pogo-stick": {
+    "src": "/media/equipment/pogo-stick.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "shock-grenade": {
+    "src": "/media/equipment/shock-grenade.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "chain-hook": {
+    "src": "/media/equipment/chain-hook.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "bomb": {
+    "src": "/media/equipment/bomb.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "magnet": {
+    "src": "/media/equipment/magnet.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "midas-touch": {
+    "src": "/media/equipment/midas-touch.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "pocket-portal": {
+    "src": "/media/equipment/pocket-portal.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "chain-shot": {
+    "src": "/media/equipment/chain-shot.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "piercing-shot": {
+    "src": "/media/equipment/piercing-shot.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "switcher": {
+    "src": "/media/equipment/switcher.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "decoy": {
+    "src": "/media/equipment/decoy.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "talisman": {
+    "src": "/media/equipment/talisman.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "escape-rope": {
+    "src": "/media/equipment/escape-rope.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  },
+  "sticky-bomb": {
+    "src": "/media/equipment/sticky-bomb.png",
+    "width": 32,
+    "height": 32,
+    "frameWidth": 32,
+    "frameHeight": 32,
+    "frames": 1
+  }
+}

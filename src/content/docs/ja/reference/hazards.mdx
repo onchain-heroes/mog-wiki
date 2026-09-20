@@ -1,0 +1,63 @@
+---
+title: 天候と危険
+description: ラン中に表示される天候の効果を確認し、毒や凍結、突風、落雷に備えましょう。
+visibility: public
+lastUpdated: 2026-09-20
+knowledgeScope: player-visible
+gameMode: arcade
+evidence: observable-gameplay
+sidebar:
+  order: 3
+---
+
+import TurnDemo from '../../../../components/TurnDemo.astro';
+
+**天候アイコン**を開くと、今の階層に影響している効果を確認できます。バイオーム天候はその階を離れるまで続き、通常の天候は一時的です。
+
+<span id="miasma"></span>
+
+## 瘴気
+
+敵の攻撃を受けると**毒**になり、時間とともにダメージを受けます。再び攻撃を受けると持続時間が更新されます。
+
+<TurnDemo kind="miasma" />
+
+<span id="blizzard"></span>
+
+## ブリザード
+
+ドロップが凍り、中身を確認したり拾ったりできなくなることがあります。**凍ったドロップに1回ぶつかる**と氷が割れます。待っていても自然には解けません。
+
+敵の攻撃で**凍傷**になることもあり、効果が続く間は攻撃にエネルギーを使います。再び攻撃を受けると凍傷の持続時間が更新されます。
+
+<TurnDemo kind="ice" />
+
+<span id="heatwave"></span>
+
+## 熱波
+
+**蜃気楼**によって、多くの敵の攻撃の溜め時間が読みにくくなります。攻撃の予兆は引き続き表示されます。
+
+敵の攻撃を受けると**火傷**にもなり、時間とともにダメージを受けます。
+
+<TurnDemo kind="heatwave" />
+
+<span id="gale"></span>
+
+## 強風
+
+突風で、あなた、敵、落ちているドロップが風下へ1マス押されます。根を張った敵はその場に留まります。
+
+<TurnDemo kind="gale" />
+
+<span id="storm"></span>
+
+## 嵐
+
+床に印が付き、次のターンに雷が落ちます。**落雷する前に印から離れましょう。** 雷はあなたにも敵にもダメージを与えます。
+
+<TurnDemo kind="lightning" />
+
+## 床の罠
+
+[トゲ](/ja/reference/cells/#spikes)、[壁の矢の罠](/ja/reference/cells/#wall-arrow-traps)、[溶岩](/ja/reference/cells/#lava)は、天候とは別の危険です。渡る前に各項目を確認しましょう。攻撃や待機でもターンは進みます。今トゲが引っ込んでいても、次の行動後までそのままとは限りません。

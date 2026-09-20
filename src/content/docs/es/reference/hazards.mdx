@@ -1,0 +1,53 @@
+---
+title: Clima y peligros
+description: Reconoce los efectos del clima que aparecen durante una partida.
+visibility: public
+lastUpdated: 2026-09-20
+knowledgeScope: player-visible
+gameMode: arcade
+evidence: observable-gameplay
+sidebar:
+  order: 3
+---
+
+import TurnDemo from '../../../../components/TurnDemo.astro';
+
+Abre el **indicador del clima** para consultar los efectos que afectan al piso actual. El clima del bioma dura hasta que abandonas el piso; el clima común es temporal.
+
+## Miasma
+
+Los ataques enemigos aplican **veneno**, que causa daño con el tiempo. Otro golpe renueva el efecto.
+
+<TurnDemo kind="miasma" />
+
+## Ventisca
+
+Los objetos del suelo pueden congelarse, impidiendo ver qué son o recogerlos. **Golpea una vez un objeto congelado** para romper el hielo. Esperar no lo descongela.
+
+Los ataques enemigos también pueden aplicar **congelación**, que hace que tus ataques cuesten Energía mientras dura. Otro golpe renueva la congelación.
+
+<TurnDemo kind="ice" />
+
+## Ola de calor
+
+El **Espejismo** vuelve menos predecible el tiempo de preparación de muchos ataques enemigos. El aviso del ataque sigue apareciendo.
+
+Los ataques enemigos también aplican **quemadura**, que causa daño con el tiempo.
+
+<TurnDemo kind="heatwave" />
+
+## Vendaval
+
+Las ráfagas empujan una casilla a favor del viento a tu personaje, a los enemigos y a los recursos del suelo. Los enemigos enraizados no se mueven.
+
+<TurnDemo kind="gale" />
+
+## Tormenta
+
+El rayo marca una casilla antes de golpearla en el siguiente turno. **Sal de la marca antes de que caiga.** Puede dañar tanto a tu personaje como a los enemigos.
+
+<TurnDemo kind="lightning" />
+
+## Trampas del suelo
+
+Los [pinchos](/es/reference/cells/#spikes), las [trampas de flechas de pared](/es/reference/cells/#wall-arrow-traps) y la [lava](/es/reference/cells/#lava) son peligros distintos del clima. Lee sus entradas antes de cruzarlos. Atacar o esperar también hace avanzar un turno; que un pincho esté retraído ahora no garantiza que siga así después de tu siguiente acción.

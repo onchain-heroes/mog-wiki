@@ -1,0 +1,292 @@
+[
+  {
+    "id": "apex-hunter",
+    "name": "Apex Hunter",
+    "appearance": "",
+    "behavior": "Improves critical-hit chances against enemies at full health.",
+    "response": "Use it for your opening strike on an undamaged enemy.",
+    "warning": "",
+    "category": "damage",
+    "rarity": "legendary"
+  },
+  {
+    "id": "glass-cannon",
+    "name": "Glass Cannon",
+    "appearance": "",
+    "behavior": "Increases damage but lowers your maximum Energy.",
+    "response": "Choose it when you can manage the smaller Energy reserve.",
+    "warning": "Taking it also removes any current Energy above the new cap.",
+    "category": "damage",
+    "rarity": "legendary"
+  },
+  {
+    "id": "sharp-blade",
+    "name": "Sharp Blade",
+    "appearance": "",
+    "behavior": "Increases the damage you deal.",
+    "response": "Choose it for a damage boost without a low-Energy or wounded-target requirement.",
+    "warning": "",
+    "category": "damage",
+    "rarity": "epic"
+  },
+  {
+    "id": "berserker",
+    "name": "Berserker",
+    "appearance": "",
+    "behavior": "Increases damage while your Energy is low.",
+    "response": "Use the bonus when it activates, while preserving enough Energy to survive and move.",
+    "warning": "The bonus depends on your current Energy.",
+    "category": "damage",
+    "rarity": "epic"
+  },
+  {
+    "id": "cleave",
+    "name": "Cleave",
+    "appearance": "",
+    "behavior": "Your strike also damages enemies beside you.",
+    "response": "Attack when multiple enemies are adjacent to get value from the extra damage.",
+    "warning": "It does not remove the danger of standing beside several enemies.",
+    "category": "damage",
+    "rarity": "epic"
+  },
+  {
+    "id": "poison-blade",
+    "name": "Poison Blade",
+    "appearance": "",
+    "behavior": "Strikes can poison a non-boss enemy, causing damage over time.",
+    "response": "After poison lands, keep dodging while it works.",
+    "warning": "It does not poison the final boss.",
+    "category": "damage",
+    "rarity": "rare"
+  },
+  {
+    "id": "critical-strike",
+    "name": "Critical Boost",
+    "appearance": "",
+    "behavior": "Improves your chance to land a critical hit.",
+    "response": "Choose it to strengthen critical-hit opportunities across ordinary attacks.",
+    "warning": "A critical hit is not guaranteed.",
+    "category": "damage",
+    "rarity": "rare"
+  },
+  {
+    "id": "frenzy",
+    "name": "Frenzy",
+    "appearance": "",
+    "behavior": "Kills can ready bonus damage for your next strike.",
+    "response": "Use the primed damage bonus on your next target.",
+    "warning": "It boosts the next strike rather than permanently raising damage after every kill.",
+    "category": "damage",
+    "rarity": "rare"
+  },
+  {
+    "id": "merciless",
+    "name": "Merciless",
+    "appearance": "",
+    "behavior": "Increases damage against enemies at half health or lower.",
+    "response": "Use it to finish enemies you have already wounded.",
+    "warning": "",
+    "category": "damage",
+    "rarity": "rare"
+  },
+  {
+    "id": "reach",
+    "name": "Reach",
+    "appearance": "",
+    "behavior": "A strike can also hit a second enemy directly behind your first target.",
+    "response": "Line up two enemies in the same row or column.",
+    "warning": "The second target must be in line with the first.",
+    "category": "damage",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "heavy-hitter",
+    "name": "Heavy Hitter",
+    "appearance": "",
+    "behavior": "Increases attack power, but each strike costs 1 Energy.",
+    "response": "Account for the added Energy cost before committing to a long fight.",
+    "warning": "More attack power also means spending Energy on strikes.",
+    "category": "damage",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "apex-guard",
+    "name": "Apex Guard",
+    "appearance": "",
+    "behavior": "Reduces the first hit from an enemy that is still at full health.",
+    "response": "Treat it as a cushion against an opening ambush.",
+    "warning": "It does not protect against traps or repeatedly reduce the same enemy's attacks.",
+    "category": "defense",
+    "rarity": "legendary"
+  },
+  {
+    "id": "divine-shield",
+    "name": "Divine Shield",
+    "appearance": "",
+    "behavior": "Can block an incoming enemy hit.",
+    "response": "Keep dodging; use the occasional block as extra protection.",
+    "warning": "It does not block trap damage, and it is not guaranteed.",
+    "category": "defense",
+    "rarity": "epic"
+  },
+  {
+    "id": "armor-plating",
+    "name": "Armor Plating",
+    "appearance": "",
+    "behavior": "Reduces damage from enemy attacks and traps such as spikes and arrows.",
+    "response": "Choose it for protection across combat and hazards.",
+    "warning": "Does not reduce lava damage or damage over time from poison and burn.",
+    "category": "defense",
+    "rarity": "epic"
+  },
+  {
+    "id": "thorns",
+    "name": "Thorns",
+    "appearance": "",
+    "behavior": "Reflects some damage from melee strikes back at the attacker.",
+    "response": "Treat the reflected damage as a bonus when a melee hit gets through.",
+    "warning": "It is not retaliation against arrows or traps.",
+    "category": "defense",
+    "rarity": "rare"
+  },
+  {
+    "id": "greed",
+    "name": "Greed",
+    "appearance": "",
+    "behavior": "Increases treasure earnings at the cost of taking more damage.",
+    "response": "Weigh the extra treasure against the reduced margin for mistakes.",
+    "warning": "Extra floor treasure starts on later floors; the damage penalty applies immediately.",
+    "category": "economy",
+    "rarity": "legendary"
+  },
+  {
+    "id": "prospector",
+    "name": "Prospector",
+    "appearance": "",
+    "behavior": "Improves the chance of finding an item in breakable objects.",
+    "response": "Check pots and crates as you explore.",
+    "warning": "It does not guarantee an item from each object.",
+    "category": "economy",
+    "rarity": "rare"
+  },
+  {
+    "id": "scavenger",
+    "name": "Scavenger",
+    "appearance": "",
+    "behavior": "Improves the chance that breakable objects produce loot.",
+    "response": "Check breakables along your route for supplies.",
+    "warning": "It does not guarantee a drop.",
+    "category": "economy",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "swift-steps",
+    "name": "Swift Steps",
+    "appearance": "",
+    "behavior": "Grants free moves at the beginning of each floor.",
+    "response": "Use the free movement allowance while exploring the new floor.",
+    "warning": "Free movement does not prevent damage from attacks or hazards.",
+    "category": "mobility",
+    "rarity": "epic"
+  },
+  {
+    "id": "survival-instinct",
+    "name": "Survival Instinct",
+    "appearance": "",
+    "behavior": "Grants free moves when Energy falls below 10.",
+    "response": "Use the emergency movement to reach supplies or a safer position.",
+    "warning": "It activates only once per floor and does not make you invulnerable.",
+    "category": "mobility",
+    "rarity": "rare"
+  },
+  {
+    "id": "momentum",
+    "name": "Momentum",
+    "appearance": "",
+    "behavior": "Kills build toward free movement.",
+    "response": "Use the free moves earned through combat to continue exploring.",
+    "warning": "The number of kills needed depends on its enhancement level.",
+    "category": "mobility",
+    "rarity": "rare"
+  },
+  {
+    "id": "last-stand",
+    "name": "Last Stand",
+    "appearance": "",
+    "behavior": "Lets you survive a fatal hit and recover Energy.",
+    "response": "Use the recovery to escape danger or reach more Energy.",
+    "warning": "It can save you only once per floor.",
+    "category": "sustain",
+    "rarity": "legendary"
+  },
+  {
+    "id": "vampiric",
+    "name": "Vampiric",
+    "appearance": "",
+    "behavior": "Kills build toward restoring Energy.",
+    "response": "Use combat rewards to help sustain your run.",
+    "warning": "The number of kills needed depends on its enhancement level.",
+    "category": "sustain",
+    "rarity": "epic"
+  },
+  {
+    "id": "salvage",
+    "name": "Salvage",
+    "appearance": "",
+    "behavior": "Breaking ordinary pots and crates restores Energy.",
+    "response": "Break objects along your route when you need recovery.",
+    "warning": "A mimic reveal is not an ordinary breakable recovery.",
+    "category": "sustain",
+    "rarity": "rare"
+  },
+  {
+    "id": "renewal",
+    "name": "Renewal",
+    "appearance": "",
+    "behavior": "Restores Energy at the start of each floor.",
+    "response": "Factor the recovery into your plans for the next floor.",
+    "warning": "",
+    "category": "sustain",
+    "rarity": "uncommon"
+  },
+  {
+    "id": "scout",
+    "name": "Scout",
+    "appearance": "",
+    "behavior": "Extends your vision range.",
+    "response": "Use the wider view to spot routes and threats earlier.",
+    "warning": "",
+    "category": "utility",
+    "rarity": "rare"
+  },
+  {
+    "id": "corruption",
+    "name": "Corruption",
+    "appearance": "",
+    "behavior": "Strikes can turn a non-boss enemy against another enemy.",
+    "response": "Use the interruption to reposition while the corrupted enemy attacks.",
+    "warning": "The effect ends after its attack; it is not a permanent ally.",
+    "category": "control",
+    "rarity": "epic"
+  },
+  {
+    "id": "disrupt",
+    "name": "Disrupt",
+    "appearance": "",
+    "behavior": "Strikes can briefly stun an enemy.",
+    "response": "Use a successful stun to reposition or continue attacking.",
+    "warning": "The stun is not guaranteed.",
+    "category": "control",
+    "rarity": "rare"
+  },
+  {
+    "id": "menace",
+    "name": "Menace",
+    "appearance": "",
+    "behavior": "A kill can frighten nearby enemies and briefly stop their actions.",
+    "response": "Defeat an enemy near others to create a possible opening.",
+    "warning": "It does not frighten the final boss.",
+    "category": "control",
+    "rarity": "rare"
+  }
+]

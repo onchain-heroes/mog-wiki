@@ -1,0 +1,91 @@
+---
+import { getLocale } from '../i18n/ui';
+import { demoText, type DemoKind } from '../i18n/demos';
+import captures from '../data/captures.json';
+interface Props {
+  kind: DemoKind;
+}
+const { kind } = Astro.props;
+const locale = getLocale(Astro.locals.starlightRoute.lang);
+const copy = demoText[locale];
+const demo = copy.demos[kind];
+const { width, height } = captures.clips[kind];
+const captionId = `clip-${kind}-caption`;
+---
+
+<figure class="game-clip" data-clip={kind}>
+  <h3 id={`clip-${kind}`}>{demo.title}</h3>
+  <video
+    controls
+    playsinline
+    preload="none"
+    poster={`/media/gameplay/${kind}.webp`}
+    width={width}
+    height={height}
+    aria-labelledby={`clip-${kind}`}
+    aria-describedby={captionId}
+  >
+    <source src={`/media/gameplay/${kind}.mp4`} type="video/mp4" />
+    <a href={`/media/gameplay/${kind}.gif`} download>
+      {copy.gif}
+    </a>
+  </video>
+  <figcaption id={captionId}>
+    <ol>
+      {demo.steps.map((step) => (
+        <li>{step}</li>
+      ))}
+    </ol>
+    <div class="capture-footer">
+      <span>{copy.note}</span>
+      <a href={`/media/gameplay/${kind}.gif`} download data-pagefind-ignore>
+        {copy.gif}
+      </a>
+    </div>
+  </figcaption>
+</figure>
+
+<style>
+  .game-clip {
+    margin: 1.75rem 0;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.65rem;
+    overflow: hidden;
+  }
+  h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 1rem 1.25rem;
+  }
+  video {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    background: #18181b;
+  }
+  figcaption {
+    padding: 0.75rem 1.25rem 1rem;
+  }
+  ol {
+    margin: 0;
+    padding-left: 1.2rem;
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+  li + li {
+    margin-top: 0.35rem;
+  }
+  .capture-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: var(--sl-color-gray-2);
+  }
+  a {
+    white-space: nowrap;
+  }
+</style>

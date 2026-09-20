@@ -1,0 +1,76 @@
+---
+import { getEntries } from '../lib/catalogues';
+import { getLocale, localizedPath, ui } from '../i18n/ui';
+import Sprite from './Sprite.astro';
+const locale = getLocale(Astro.locals.starlightRoute.lang);
+const entries = getEntries('enemies', locale);
+const t = ui[locale];
+---
+
+<div class="floor-roster">
+  {Array.from({ length: 10 }, (_, index) => index + 1).map((floor) => (
+    <section>
+      <h3 id={`floor-${floor}`}>
+        <a href={localizedPath(`/reference/enemies/?floor=${floor}`, locale)}>
+          {t.floors} {floor} <span aria-hidden="true">↗</span>
+        </a>
+      </h3>
+      <ul>
+        {entries
+          .filter((entry) => entry.floors?.includes(floor))
+          .map((entry) => (
+            <li>
+              <a
+                href={localizedPath(`/reference/enemies/#${entry.id}`, locale)}
+              >
+                <Sprite id={entry.id} label="" size={40} />
+                <span>{entry.name}</span>
+              </a>
+            </li>
+          ))}
+      </ul>
+    </section>
+  ))}
+</div>
+
+<style>
+  section {
+    padding-block: 1rem;
+    border-top: 1px solid var(--sl-color-gray-5);
+  }
+  h3 {
+    font-size: 1.1rem;
+    margin: 0 0 0.75rem;
+  }
+  h3 a {
+    text-decoration: none;
+  }
+  h3 span {
+    font-size: 0.8rem;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    margin: 0;
+  }
+  li a {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.15rem 0.5rem 0.15rem 0;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.35rem;
+    color: var(--sl-color-white);
+    font-size: 0.75rem;
+  }
+  li a:hover {
+    border-color: var(--sl-color-accent);
+  }
+</style>

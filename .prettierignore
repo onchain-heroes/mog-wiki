@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+.local/
+.playwright-mcp/
+pnpm-lock.yaml
+playwright-report/
+test-results/

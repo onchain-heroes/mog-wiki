@@ -1,0 +1,661 @@
+{
+  "enemies": {
+    "small-slime": {
+      "name": "Slime pequeño",
+      "appearance": "Un pequeño slime azul.",
+      "behavior": "Deambula entre ataques y luego prepara un golpe contra una casilla adyacente.",
+      "response": "Sal de la casilla marcada antes del golpe. Aprovecha la pausa posterior para atacar o pasar.",
+      "warning": ""
+    },
+    "orange-slime": {
+      "name": "Slime naranja",
+      "appearance": "Un slime naranja de mayor tamaño.",
+      "behavior": "Deambula y ataca una casilla adyacente con menos preparación que el pequeño slime azul.",
+      "response": "Sal de su casilla objetivo en cuanto aparezca el aviso de ataque.",
+      "warning": "No tomes como referencia el ritmo más lento del slime pequeño."
+    },
+    "bat": {
+      "name": "Murciélago",
+      "appearance": "Un murciélago gris oscuro con las alas extendidas.",
+      "behavior": "Deambula y anuncia una embestida cuando estás en su misma fila o columna.",
+      "response": "Muévete a un lado para salir de la trayectoria antes de que se lance.",
+      "warning": "Si avanzas hacia él y entras en su casilla de llegada, aún puede golpearte."
+    },
+    "club-skeleton": {
+      "name": "Esqueleto con garrote",
+      "appearance": "Un esqueleto sin casco que lleva un garrote de madera.",
+      "behavior": "Se acerca cuando estás cerca y prepara un golpe contra la casilla adyacente que ha elegido.",
+      "response": "Provoca el golpe, sal de la casilla marcada y ataca durante su pausa.",
+      "warning": ""
+    },
+    "whip-plant": {
+      "name": "Planta látigo",
+      "appearance": "Una planta verde enraizada con una enredadera enrollada.",
+      "behavior": "Permanece quieta y azota en una dirección marcada, con un alcance de hasta dos casillas.",
+      "response": "Sal de la línea marcada. Una pared o un obstáculo sólido entre la planta y tú también bloquea el golpe.",
+      "warning": "Puede alcanzarte fuera de la distancia de combate cuerpo a cuerpo."
+    },
+    "blue-frog": {
+      "name": "Rana azul",
+      "appearance": "Una pequeña rana azul con grandes ojos amarillos.",
+      "behavior": "Salta de ida y vuelta entre casillas cercanas. Si aterriza sobre ti, te daña y rebota hacia atrás. También nace de las puestas de huevos.",
+      "response": "Vigila la casilla de llegada marcada y déjala libre mientras prepara el salto.",
+      "warning": "Un salto bloqueado puede cambiar su ruta. En los pisos 7–9, estas ranas nacen de las puestas de huevos."
+    },
+    "frog-eggs": {
+      "name": "Puesta de huevos de rana",
+      "appearance": "Un grupo inmóvil de huevos redondos de color morado.",
+      "behavior": "Produce ranas azules cerca. Un escudo protege los huevos mientras siga viva alguna rana que hayan producido.",
+      "response": "Elimina sus ranas para quitar el escudo y después ataca los huevos expuestos.",
+      "warning": "Atacar los huevos protegidos no les causa daño."
+    },
+    "large-whip-plant": {
+      "name": "Planta látigo grande",
+      "appearance": "Una gran criatura de enredaderas verdes con brotes morados.",
+      "behavior": "Permanece en su sitio y azota en una dirección marcada, con un alcance de hasta tres casillas.",
+      "response": "Sal de la fila o columna marcada en lugar de retroceder solo una casilla por ella.",
+      "warning": "Su golpe llega más lejos que el de la planta látigo pequeña."
+    },
+    "skeleton-archer": {
+      "name": "Esqueleto arquero",
+      "appearance": "Un esqueleto con arco y flechas de plumas rojas.",
+      "behavior": "Dispara flechas por su fila o columna. Retrocede si te acercas y puede preparar otro disparo mientras se aleja.",
+      "response": "Sal de la línea de tiro o cúbrete con paredes y obstáculos sólidos. Acércate por un lado.",
+      "warning": "Un arquero que retrocede aún puede preparar un disparo."
+    },
+    "armored-skeleton": {
+      "name": "Esqueleto acorazado",
+      "appearance": "Un esqueleto con casco y una hoja brillante.",
+      "behavior": "Persigue a los jugadores cercanos y golpea a la vez las cuatro casillas que tiene justo al lado.",
+      "response": "Aléjate de esas cuatro casillas antes del golpe; una posición diagonal queda fuera de este ataque.",
+      "warning": "Cambiarte a otro lado directamente adyacente no evita el ataque."
+    },
+    "exploding-mushroom": {
+      "name": "Seta explosiva",
+      "appearance": "Una pequeña seta morada con una mecha encendida.",
+      "behavior": "Se activa al acercarte, te sigue mientras arde la mecha y luego se detiene y explota. Las setas lanzadoras pueden arrojar más a tu alrededor.",
+      "response": "Aprovecha su último aviso, cuando ya está quieta, para salir de toda la zona de explosión marcada.",
+      "warning": "La explosión también alcanza las diagonales: las ocho casillas de alrededor son peligrosas."
+    },
+    "party-hat-ghost": {
+      "name": "Fantasma con gorro de fiesta",
+      "appearance": "Un fantasma verde menta pálido con un gorro de fiesta rosa.",
+      "behavior": "Te sigue despacio y bloquea casillas sin atacar. Tras quedarse un tiempo a tu lado, se asusta y retrocede antes de volver.",
+      "response": "Rodéalo y aprovecha su retirada para atravesar los pasos congestionados.",
+      "warning": "No se puede matar."
+    },
+    "hat-frog": {
+      "name": "Rana con sombrero",
+      "appearance": "Una rana rosa con un ancho sombrero de paja.",
+      "behavior": "Deambula hasta que te acercas y luego prepara saltos cortos hacia ti. Elige un nuevo destino para cada salto.",
+      "response": "Evita la casilla de llegada marcada. Revisa cada nuevo aviso mientras se acerca.",
+      "warning": "A diferencia de la rana azul, no sigue una ruta fija de ida y vuelta."
+    },
+    "pale-ghost": {
+      "name": "Fantasma pálido",
+      "appearance": "Un fantasma cian pálido, de ojos amarillos y sin gorro.",
+      "behavior": "Te sigue despacio y prepara golpes adyacentes. Tras varios golpes, se asusta y huye brevemente.",
+      "response": "Sal de su casilla de ataque marcada y mantén una ruta abierta a su alrededor.",
+      "warning": "No se puede matar y, a diferencia del fantasma con gorro de fiesta, sí puede dañarte."
+    },
+    "flame-orb": {
+      "name": "Orbe de fuego",
+      "appearance": "Una bola de fuego naranja flotante con un rostro oscuro.",
+      "behavior": "Anuncia una embestida recta cuando estás en su misma fila o columna. Puede iniciarla desde más lejos que un murciélago.",
+      "response": "Muévete a un lado para salir de la línea marcada, en vez de avanzar hacia su casilla de llegada.",
+      "warning": "La distancia por sí sola no hace segura una fila o columna despejada."
+    },
+    "orange-imp": {
+      "name": "Diablillo naranja",
+      "appearance": "Una criatura naranja con cresta oscura y cabeza puntiaguda.",
+      "behavior": "Te persigue desde lejos y después prepara un golpe contra una sola casilla adyacente.",
+      "response": "Sal de su casilla objetivo durante la preparación y ataca mientras se recupera.",
+      "warning": ""
+    },
+    "dark-imp": {
+      "name": "Diablillo oscuro",
+      "appearance": "Una criatura de color carbón con ojos brillantes y una grieta naranja en la cabeza.",
+      "behavior": "Te persigue desde lejos y ataca a la vez las cuatro casillas que tiene justo al lado.",
+      "response": "Sal de su cruz adyacente antes del golpe. Muévete a una diagonal o más lejos.",
+      "warning": "Si cambias a otro lado directamente adyacente, sigues dentro del ataque."
+    },
+    "lobbing-mushroom": {
+      "name": "Seta lanzadora",
+      "appearance": "Una gran seta morada con manchas rosas y humo en la parte superior.",
+      "behavior": "Permanece quieta y lanza repetidamente pequeñas setas explosivas a casillas libres cerca de ti.",
+      "response": "Vigila dónde cae cada seta, evita su explosión y elimina a la lanzadora para detener los lanzamientos.",
+      "warning": "Las setas arrojadas son enemigos independientes con sus propias mechas."
+    },
+    "hooded-ghost": {
+      "name": "Fantasma encapuchado",
+      "appearance": "Un fantasma azul oscuro con capucha y ojos amarillos.",
+      "behavior": "Te sigue más despacio que el fantasma pálido, pero sus golpes adyacentes son más fuertes. Huye brevemente tras varios golpes.",
+      "response": "Sigue saliendo de su casilla de ataque marcada y pasa cuando su retirada abra camino.",
+      "warning": "No se puede matar. Su movimiento más lento no implica un aviso de ataque más largo."
+    },
+    "chest-mimic": {
+      "name": "Cofre mímico",
+      "appearance": "Un cofre que revela dientes y una larga lengua.",
+      "behavior": "Se oculta como un cofre en los pisos normales. Al revelarse, embosca de inmediato al jugador adyacente; después persigue y usa golpes cuerpo a cuerpo anunciados.",
+      "response": "Conserva suficiente Energía para sobrevivir a una sorpresa al abrir cofres. Tras descubrirlo, esquiva su casilla marcada y ataca mientras se recupera.",
+      "warning": "La emboscada inicial no da el aviso de preparación habitual."
+    },
+    "pot-mimic": {
+      "name": "Vasija mímica",
+      "appearance": "Una vasija morada que muestra una boca dentada al revelarse.",
+      "behavior": "Se oculta como una vasija en los pisos normales y embosca de inmediato al jugador adyacente cuando se revela. Después persigue y prepara sus golpes más rápido que el cofre mímico.",
+      "response": "Prepárate para una posible sorpresa al romper vasijas y muévete pronto cuando aparezca su siguiente aviso de ataque.",
+      "warning": "Puede golpearte al revelarse antes de que tengas un turno para esquivar."
+    },
+    "sir-jackalot": {
+      "name": "Sir Jackalot",
+      "appearance": "Un enorme jefe acorazado que lleva una larga lanza.",
+      "behavior": "Prepara amplias estocadas y avanza al atacar. A mitad de vida, salta y prepara una onda expansiva en forma de anillo; después, sus estocadas son más rápidas y fuertes.",
+      "response": "Sal de toda la franja marcada de la lanza y evita el anillo de la onda tras el salto. Revisa tu ruta de escape antes de cada ataque.",
+      "warning": "No hace la pausa de recuperación de los enemigos comunes después de una estocada."
+    }
+  },
+  "cells": {
+    "open-floor": {
+      "name": "Suelo despejado",
+      "appearance": "Terreno transitable entre las paredes de la mazmorra.",
+      "behavior": "El suelo normal te permite recorrer el laberinto.",
+      "response": "Planifica una ruta que evite enemigos, obstáculos y peligros visibles.",
+      "warning": "El aspecto del suelo cambia entre biomas; su color por sí solo no significa que cause daño."
+    },
+    "walls": {
+      "name": "Paredes y pilares",
+      "appearance": "Bordes sólidos de las salas y bloques dentro de ellas.",
+      "behavior": "Las paredes impiden el movimiento e interrumpen las rutas por una sala.",
+      "response": "Usa las puertas y los pasillos para rodearlas.",
+      "warning": ""
+    },
+    "rocks": {
+      "name": "Rocas",
+      "appearance": "Rocas sólidas sobre el suelo.",
+      "behavior": "Bloquean el paso y no se pueden romper como las vasijas o las cajas.",
+      "response": "Busca un camino alrededor.",
+      "warning": ""
+    },
+    "wooden-walkways": {
+      "name": "Pasarelas de madera",
+      "appearance": "Tablones de madera y adornos con forma de escalera en partes de una sala.",
+      "behavior": "Son elementos decorativos, no una ruta aparte por la que subir.",
+      "response": "Sigue el suelo transitable bajo la decoración.",
+      "warning": ""
+    },
+    "torches": {
+      "name": "Antorchas",
+      "appearance": "Llamas animadas en las paredes de la mazmorra.",
+      "behavior": "Iluminan las partes cercanas de la sala.",
+      "response": "Aprovecha la zona iluminada para observar el entorno.",
+      "warning": ""
+    },
+    "spikes": {
+      "name": "Pinchos",
+      "appearance": "Una placa de suelo cuyos pinchos suben y bajan.",
+      "behavior": "Los pinchos alternan con los turnos y te dañan si se elevan bajo tus pies.",
+      "response": "Observa su ritmo y el aviso antes de cruzar.",
+      "warning": "Atacar o esperar sobre la placa también hace avanzar su ciclo."
+    },
+    "wall-arrow-traps": {
+      "name": "Trampas de flechas de pared",
+      "appearance": "Un lanzador montado en la pared cuyas flechas recorren el suelo.",
+      "behavior": "Dispara repetidamente; las flechas avanzan en línea recta al pasar los turnos.",
+      "response": "Sal de la línea de tiro antes de que te alcance una flecha.",
+      "warning": "No hay una placa de presión que evitar: el lanzador dispara automáticamente."
+    },
+    "lava": {
+      "name": "Lava",
+      "appearance": "Zonas de roca fundida animada en los pisos inferiores más calientes.",
+      "behavior": "Permanecer sobre el centro fundido consume Energía al final del turno.",
+      "response": "Rodea el centro fundido y sal de él enseguida si acabas allí.",
+      "warning": "Atacar o esperar sobre él también causa daño por contacto."
+    },
+    "lightning-warning": {
+      "name": "Aviso de rayo",
+      "appearance": "Una marca de suelo intermitente con un signo de exclamación durante una tormenta.",
+      "behavior": "Un rayo está a punto de caer en la casilla marcada.",
+      "response": "Sal de la casilla marcada en tu siguiente acción.",
+      "warning": "Es un aviso temporal de tormenta, no un tipo de terreno permanente."
+    },
+    "fountains": {
+      "name": "Fuentes",
+      "appearance": "Una fuente luminosa junto a la pared, con una pila que se extiende sobre el suelo.",
+      "behavior": "Pisar la casilla de su base recupera Energía una vez; después, la fuente pierde brillo.",
+      "response": "Pisa la casilla de la pila cuando necesites Energía.",
+      "warning": "Se consume al pisarla aunque ya tengas la Energía al máximo."
+    },
+    "shrine": {
+      "name": "Altar",
+      "appearance": "Un gran altar con el precio de curación visible.",
+      "behavior": "Ataca una vez para examinarlo y otra para comprar curación. Puedes seguir curándote mientras puedas pagar y te falte Energía.",
+      "response": "Consulta el precio actual antes de cada uso.",
+      "warning": "El precio sube con las curaciones repetidas."
+    },
+    "pots": {
+      "name": "Vasijas",
+      "appearance": "Pequeñas vasijas de varias formas repartidas por las salas.",
+      "behavior": "Bloquean el paso hasta que las rompes y pueden soltar algo que recoger.",
+      "response": "Ataca una vasija adyacente para romperla y recoge lo que deje.",
+      "warning": "Una vasija puede resultar ser un mímico y atacarte."
+    },
+    "crates": {
+      "name": "Cajas",
+      "appearance": "Cajas de madera sobre el suelo de la mazmorra.",
+      "behavior": "Bloquean el paso hasta que las rompes y pueden soltar algo que recoger.",
+      "response": "Ataca una caja adyacente y comprueba si queda algún objeto en la casilla despejada.",
+      "warning": ""
+    },
+    "chests": {
+      "name": "Cofres",
+      "appearance": "Un cofre cerrado en una casilla de la mazmorra.",
+      "behavior": "Un cofre normal se abre cuando te sitúas a su lado y esparce objetos cerca.",
+      "response": "Acércate desde una casilla despejada y recoge los objetos esparcidos.",
+      "warning": "Un cofre puede ocultar la emboscada de un mímico en vez de abrirse."
+    },
+    "golden-corn": {
+      "name": "Tallos de Maíz Dorado",
+      "appearance": "Maíz dorado que crece y se mece en una casilla.",
+      "behavior": "Durante el evento MoG x YF, romper un tallo deja Maíz Dorado para recoger.",
+      "response": "Ataca el tallo y luego pisa lo que deje.",
+      "warning": "Es un elemento de evento; solo está disponible mientras el evento esté activo."
+    },
+    "floor-stairs": {
+      "name": "Escaleras entre pisos",
+      "appearance": "Una casilla de escaleras que señala el camino para continuar.",
+      "behavior": "Pisar las escaleras de salida normales abre una confirmación de descenso.",
+      "response": "Recoge lo que quieras antes de confirmar el descenso.",
+      "warning": ""
+    },
+    "special-room-stairs": {
+      "name": "Escaleras a salas especiales",
+      "appearance": "Una entrada distinta, marcada con el nombre de una sala.",
+      "behavior": "Pisar la entrada te ofrece acceder a la sala especial indicada.",
+      "response": "Lee el nombre de la sala y confirma cuando estés listo.",
+      "warning": ""
+    },
+    "wall-portals": {
+      "name": "Portales de pared",
+      "appearance": "Portales animados y luminosos en las paredes.",
+      "behavior": "Situarte ante un portal te ofrece viajar a su pareja en el mismo piso.",
+      "response": "Revisa el coste mostrado y confirma para teletransportarte.",
+      "warning": "El teletransporte no te lleva al siguiente piso."
+    },
+    "unknown-trainer": {
+      "name": "Entrenador Desconocido",
+      "appearance": "Un personaje que espera junto a una pared de la mazmorra.",
+      "behavior": "Ofrece un intercambio: gastar Energía y renunciar a un talento propio permitido para recibir otro al azar.",
+      "response": "Acércate al entrenador, revisa el coste de Energía y elige el talento permitido al que renunciarás. El nuevo se revela después del intercambio.",
+      "warning": "Las mejoras del talento anterior se pierden; el nuevo empieza sin mejoras."
+    },
+    "armory-pedestals": {
+      "name": "Pedestales de la Armería",
+      "appearance": "Iconos de objetos expuestos con sus precios en la Armería o el Santuario.",
+      "behavior": "Ataca una vez para examinar un objeto y otra para comprarlo si cumples los requisitos.",
+      "response": "Lee la descripción, el precio y los requisitos de inventario antes de comprar.",
+      "warning": ""
+    },
+    "armory-shopkeeper": {
+      "name": "Mercader de la Armería",
+      "appearance": "Un personaje entre los expositores de la Armería.",
+      "behavior": "El mercader está junto a los objetos en venta; las compras se hacen en los expositores.",
+      "response": "Examina el pedestal del objeto que quieras.",
+      "warning": ""
+    },
+    "energy-orbs": {
+      "name": "Orbes de Energía",
+      "appearance": "Orbes luminosos de Energía sobre el suelo.",
+      "behavior": "Recoger un orbe recupera Energía hasta tu máximo.",
+      "response": "Písalo para recogerlo.",
+      "warning": "Algunos objetos del suelo desaparecen si pasan demasiados turnos."
+    },
+    "loose-pickups": {
+      "name": "Recursos del suelo",
+      "appearance": "Iconos de recursos y orbes de experiencia sobre el suelo.",
+      "behavior": "Se recogen al pisarlos. Algunos efectos pueden recoger recursos cercanos por ti.",
+      "response": "Recoge los recursos útiles antes de salir de la sala.",
+      "warning": "Los objetos que parpadean o se desvanecen están a punto de desaparecer."
+    },
+    "item-pickups": {
+      "name": "Consumibles del suelo",
+      "appearance": "El icono de un consumible en una casilla del suelo.",
+      "behavior": "Debes pisar directamente un consumible para recogerlo; si el inventario está lleno, aparece una elección.",
+      "response": "Comprueba tus objetos actuales antes de elegir un reemplazo.",
+      "warning": "Los efectos que recogen recursos cercanos no recogen consumibles automáticamente."
+    },
+    "frozen-pickups": {
+      "name": "Objetos congelados",
+      "appearance": "Un objeto encerrado en un bloque de hielo durante una Ventisca.",
+      "behavior": "El hielo impide recogerlo hasta que lo golpeas. Esperar no lo descongela.",
+      "response": "Golpea el hielo y recoge el objeto que quede al descubierto.",
+      "warning": "Su cuenta atrás de desaparición se pausa mientras está congelado y vuelve a avanzar al romperse el hielo."
+    },
+    "boss-reward-chest": {
+      "name": "Cofre de recompensa del jefe",
+      "appearance": "Un gran cofre que queda tras derrotar al jefe final.",
+      "behavior": "Bloquea el espacio que ocupa y se abre tras varios ataques para soltar sus recompensas.",
+      "response": "Sigue golpeándolo hasta abrirlo y recoge lo que deje antes de tomar la salida.",
+      "warning": ""
+    },
+    "boss-exit-gate": {
+      "name": "Reja de salida del jefe",
+      "appearance": "Un paso enrejado que protege las escaleras de la arena final.",
+      "behavior": "Bloquea la salida mientras el jefe siga vivo y se abre al derrotarlo.",
+      "response": "Derrota al jefe, recoge las recompensas y camina hasta las escaleras de salida para terminar la partida.",
+      "warning": ""
+    }
+  },
+  "talents": {
+    "apex-hunter": {
+      "name": "Cazador superior",
+      "appearance": "",
+      "behavior": "Aumenta la probabilidad de crítico contra enemigos con toda su vida.",
+      "response": "Aprovéchalo para el primer golpe contra un enemigo ileso.",
+      "warning": ""
+    },
+    "glass-cannon": {
+      "name": "Cañón de cristal",
+      "appearance": "",
+      "behavior": "Aumenta el daño, pero reduce tu Energía máxima.",
+      "response": "Elígelo si puedes manejar una reserva de Energía menor.",
+      "warning": "Al elegirlo también pierdes la Energía actual que supere el nuevo límite."
+    },
+    "sharp-blade": {
+      "name": "Hoja afilada",
+      "appearance": "",
+      "behavior": "Aumenta el daño que infliges.",
+      "response": "Elígelo para mejorar el daño sin necesitar poca Energía ni un objetivo herido.",
+      "warning": ""
+    },
+    "berserker": {
+      "name": "Berserker",
+      "appearance": "",
+      "behavior": "Aumenta el daño cuando tienes poca Energía.",
+      "response": "Aprovecha la bonificación cuando se active, pero conserva Energía para sobrevivir y moverte.",
+      "warning": "La bonificación depende de tu Energía actual."
+    },
+    "cleave": {
+      "name": "Tajo",
+      "appearance": "",
+      "behavior": "Tu golpe también daña a los enemigos que tienes al lado.",
+      "response": "Ataca cuando haya varios enemigos adyacentes para aprovechar el daño adicional.",
+      "warning": "No elimina el peligro de estar junto a varios enemigos."
+    },
+    "poison-blade": {
+      "name": "Hoja venenosa",
+      "appearance": "",
+      "behavior": "Los golpes pueden envenenar a un enemigo que no sea jefe y causarle daño con el tiempo.",
+      "response": "Cuando apliques veneno, sigue esquivando mientras hace efecto.",
+      "warning": "No envenena al jefe final."
+    },
+    "critical-strike": {
+      "name": "Impulso crítico",
+      "appearance": "",
+      "behavior": "Aumenta tu probabilidad de asestar un golpe crítico.",
+      "response": "Elígelo para tener más oportunidades de crítico con tus ataques normales.",
+      "warning": "El golpe crítico no está garantizado."
+    },
+    "frenzy": {
+      "name": "Frenesí",
+      "appearance": "",
+      "behavior": "Las bajas pueden preparar daño adicional para tu siguiente golpe.",
+      "response": "Usa la bonificación preparada contra tu siguiente objetivo.",
+      "warning": "Mejora el siguiente golpe, no aumenta el daño permanentemente tras cada baja."
+    },
+    "merciless": {
+      "name": "Sin piedad",
+      "appearance": "",
+      "behavior": "Aumenta el daño contra enemigos con la mitad de su vida o menos.",
+      "response": "Úsalo para rematar a los enemigos que ya has herido.",
+      "warning": ""
+    },
+    "reach": {
+      "name": "Alcance",
+      "appearance": "",
+      "behavior": "Un golpe puede alcanzar también a un segundo enemigo justo detrás del primer objetivo.",
+      "response": "Alinea a dos enemigos en la misma fila o columna.",
+      "warning": "El segundo objetivo debe estar en línea con el primero."
+    },
+    "heavy-hitter": {
+      "name": "Golpe pesado",
+      "appearance": "",
+      "behavior": "Aumenta el poder de ataque, pero cada golpe cuesta 1 de Energía.",
+      "response": "Calcula el coste adicional de Energía antes de entrar en una pelea larga.",
+      "warning": "El mayor poder de ataque también supone gastar Energía al golpear."
+    },
+    "apex-guard": {
+      "name": "Guardia superior",
+      "appearance": "",
+      "behavior": "Reduce el primer golpe de un enemigo que aún tiene toda su vida.",
+      "response": "Considéralo una protección frente a una emboscada inicial.",
+      "warning": "No protege de las trampas ni reduce repetidamente los ataques del mismo enemigo."
+    },
+    "divine-shield": {
+      "name": "Escudo divino",
+      "appearance": "",
+      "behavior": "Puede bloquear un golpe enemigo.",
+      "response": "Sigue esquivando y aprovecha el bloqueo ocasional como protección adicional.",
+      "warning": "No bloquea el daño de trampas y no está garantizado."
+    },
+    "armor-plating": {
+      "name": "Blindaje",
+      "appearance": "",
+      "behavior": "Reduce el daño de ataques enemigos y de trampas como pinchos y flechas.",
+      "response": "Elígelo para protegerte en combate y frente a peligros.",
+      "warning": "No reduce el daño de lava ni el daño con el tiempo del veneno y las quemaduras."
+    },
+    "thorns": {
+      "name": "Espinas",
+      "appearance": "",
+      "behavior": "Devuelve al atacante parte del daño de los golpes cuerpo a cuerpo.",
+      "response": "Considera el daño reflejado una ventaja adicional cuando recibas un golpe cuerpo a cuerpo.",
+      "warning": "No devuelve el daño de flechas ni de trampas."
+    },
+    "greed": {
+      "name": "Codicia",
+      "appearance": "",
+      "behavior": "Aumenta el Tesoro que obtienes a cambio de recibir más daño.",
+      "response": "Compara el Tesoro adicional con el menor margen para cometer errores.",
+      "warning": "El Tesoro adicional del piso empieza en pisos posteriores; la penalización de daño se aplica inmediatamente."
+    },
+    "prospector": {
+      "name": "Prospector",
+      "appearance": "",
+      "behavior": "Aumenta la probabilidad de encontrar un consumible en objetos rompibles.",
+      "response": "Revisa las vasijas y cajas mientras exploras.",
+      "warning": "No garantiza un consumible en cada objeto."
+    },
+    "scavenger": {
+      "name": "Recolector",
+      "appearance": "",
+      "behavior": "Aumenta la probabilidad de que los objetos rompibles suelten botín.",
+      "response": "Revisa los objetos rompibles de tu ruta para encontrar suministros.",
+      "warning": "No garantiza que suelten algo."
+    },
+    "swift-steps": {
+      "name": "Pasos veloces",
+      "appearance": "",
+      "behavior": "Otorga movimientos gratuitos al principio de cada piso.",
+      "response": "Aprovecha los movimientos gratuitos al explorar el nuevo piso.",
+      "warning": "El movimiento gratuito no evita el daño de ataques o peligros."
+    },
+    "survival-instinct": {
+      "name": "Instinto de supervivencia",
+      "appearance": "",
+      "behavior": "Otorga movimientos gratuitos cuando la Energía baja de 10.",
+      "response": "Usa esos movimientos de emergencia para llegar a suministros o a un lugar más seguro.",
+      "warning": "Solo se activa una vez por piso y no te vuelve invulnerable."
+    },
+    "momentum": {
+      "name": "Impulso",
+      "appearance": "",
+      "behavior": "Las bajas te acercan a obtener movimientos gratuitos.",
+      "response": "Usa los movimientos ganados en combate para seguir explorando.",
+      "warning": "El número de bajas necesarias depende del nivel de mejora."
+    },
+    "last-stand": {
+      "name": "Última resistencia",
+      "appearance": "",
+      "behavior": "Te permite sobrevivir a un golpe mortal y recuperar Energía.",
+      "response": "Aprovecha la recuperación para escapar del peligro o conseguir más Energía.",
+      "warning": "Solo puede salvarte una vez por piso."
+    },
+    "vampiric": {
+      "name": "Vampirismo",
+      "appearance": "",
+      "behavior": "Las bajas te acercan a recuperar Energía.",
+      "response": "Aprovecha las recompensas del combate para mantener tu partida.",
+      "warning": "El número de bajas necesarias depende del nivel de mejora."
+    },
+    "salvage": {
+      "name": "Aprovechamiento",
+      "appearance": "",
+      "behavior": "Romper vasijas y cajas normales recupera Energía.",
+      "response": "Rompe objetos de tu ruta cuando necesites recuperarte.",
+      "warning": "Descubrir un mímico no cuenta como romper un objeto normal para recuperarte."
+    },
+    "renewal": {
+      "name": "Renovación",
+      "appearance": "",
+      "behavior": "Recupera Energía al principio de cada piso.",
+      "response": "Ten en cuenta esa recuperación al planificar el siguiente piso.",
+      "warning": ""
+    },
+    "scout": {
+      "name": "Explorador",
+      "appearance": "",
+      "behavior": "Amplía tu alcance de visión.",
+      "response": "Usa la visión ampliada para detectar antes las rutas y amenazas.",
+      "warning": ""
+    },
+    "corruption": {
+      "name": "Corrupción",
+      "appearance": "",
+      "behavior": "Los golpes pueden hacer que un enemigo que no sea jefe ataque a otro enemigo.",
+      "response": "Aprovecha la interrupción para cambiar de posición mientras ataca el enemigo corrompido.",
+      "warning": "El efecto termina después de su ataque; no se convierte en un aliado permanente."
+    },
+    "disrupt": {
+      "name": "Interrupción",
+      "appearance": "",
+      "behavior": "Los golpes pueden aturdir brevemente a un enemigo.",
+      "response": "Aprovecha un aturdimiento para cambiar de posición o seguir atacando.",
+      "warning": "El aturdimiento no está garantizado."
+    },
+    "menace": {
+      "name": "Amenaza",
+      "appearance": "",
+      "behavior": "Una baja puede asustar a los enemigos cercanos y detener brevemente sus acciones.",
+      "response": "Derrota a un enemigo cerca de otros para intentar crear una oportunidad.",
+      "warning": "No asusta al jefe final."
+    }
+  },
+  "equipment": {
+    "single-shot": {
+      "name": "Disparo único",
+      "appearance": "",
+      "behavior": "Lanza un disparo recto que alcanza al primer enemigo de su trayectoria. Dos usos.",
+      "response": "Busca una fila o columna despejada hacia tu objetivo.",
+      "warning": "Las paredes detienen el disparo y los objetivos deben estar a la vista."
+    },
+    "pogo-stick": {
+      "name": "Saltador",
+      "appearance": "",
+      "behavior": "Salta a una casilla libre cercana, incluso atravesando paredes. Dos usos.",
+      "response": "Elige una casilla de llegada libre para cruzar un obstáculo o cambiar de posición.",
+      "warning": "No se puede usar en salas especiales ni en la arena del jefe final."
+    },
+    "shock-grenade": {
+      "name": "Granada aturdidora",
+      "appearance": "",
+      "behavior": "Aturde a los enemigos de la zona elegida. Dos usos.",
+      "response": "Úsala para interrumpir a un grupo, incluidos los fantasmas, mientras cambias de posición.",
+      "warning": "No causa daño ni puede aturdir al jefe final."
+    },
+    "chain-hook": {
+      "name": "Gancho con cadena",
+      "appearance": "",
+      "behavior": "Atrae hacia ti al primer enemigo de una línea y lo aturde. Dos usos.",
+      "response": "Usa una línea despejada para poner a tu alcance a un enemigo distante.",
+      "warning": "No puede enganchar a los jefes. Si el destino está bloqueado, aturde al objetivo sin atraerlo."
+    },
+    "bomb": {
+      "name": "Bomba",
+      "appearance": "",
+      "behavior": "Coloca una explosión retardada en una casilla cercana que daña la zona de alrededor.",
+      "response": "Colócala cerca de enemigos u objetos rompibles y sal de la zona de explosión.",
+      "warning": "La explosión también puede dañarte."
+    },
+    "magnet": {
+      "name": "Imán",
+      "appearance": "",
+      "behavior": "Recoge recursos cercanos del suelo sin tener que pisarlos uno a uno.",
+      "response": "Úsalo cuando haya varios recursos a su alcance.",
+      "warning": "No recoge consumibles del suelo para meterlos en tu inventario."
+    },
+    "midas-touch": {
+      "name": "Toque de Midas",
+      "appearance": "",
+      "behavior": "Prepara tu siguiente golpe válido para convertir a un enemigo en una estatua de oro. Rómpela para obtener Tesoro.",
+      "response": "Actívalo antes de golpear al enemigo que quieras neutralizar.",
+      "warning": "Los jefes y los enemigos que llevan escaleras a salas especiales no se pueden transformar; el efecto sigue preparado para otro objetivo."
+    },
+    "pocket-portal": {
+      "name": "Portal de bolsillo",
+      "appearance": "",
+      "behavior": "Te teletransporta a una sala aleatoria del piso actual. Dos usos.",
+      "response": "Úsalo si quieres abandonar tu posición sin elegir el destino.",
+      "warning": "No se puede usar en salas especiales ni en la arena del jefe final."
+    },
+    "chain-shot": {
+      "name": "Disparo encadenado",
+      "appearance": "",
+      "behavior": "Lanza un disparo recto. Si el primero mata a un enemigo, obtienes un disparo adicional.",
+      "response": "Apunta el primero a un enemigo que puedas rematar.",
+      "warning": "Sin una baja no hay segundo disparo. El disparo adicional no encadena más disparos."
+    },
+    "piercing-shot": {
+      "name": "Disparo perforante",
+      "appearance": "",
+      "behavior": "Atraviesa a varios enemigos en línea recta.",
+      "response": "Alinea a los enemigos en la misma fila o columna antes de disparar.",
+      "warning": "Las paredes detienen el disparo y los objetivos deben estar a la vista."
+    },
+    "switcher": {
+      "name": "Intercambiador",
+      "appearance": "",
+      "behavior": "Intercambia tu posición con la de un enemigo visible.",
+      "response": "Elige al enemigo cuya casilla te dé la posición que necesitas.",
+      "warning": "No puede usarse contra jefes ni en salas especiales, incluida la arena del jefe final."
+    },
+    "decoy": {
+      "name": "Señuelo",
+      "appearance": "",
+      "behavior": "Coloca un cebo temporal que atrae a los enemigos comunes. Dos usos.",
+      "response": "Ponlo en una casilla libre cercana para desviar la atención mientras cambias de posición.",
+      "warning": "Colocar otro señuelo reemplaza al anterior. Sir Jackalot no lo sigue."
+    },
+    "talisman": {
+      "name": "Talismán",
+      "appearance": "",
+      "behavior": "Captura a un fantasma visible y lo elimina. Tres usos.",
+      "response": "Úsalo para quitar un fantasma de una ruta bloqueada.",
+      "warning": "Solo funciona contra fantasmas, no contra enemigos comunes."
+    },
+    "escape-rope": {
+      "name": "Cuerda de escape",
+      "appearance": "",
+      "behavior": "Abandona el piso actual y te lleva a un Altar o a una Armería.",
+      "response": "Úsala para salir de un piso peligroso y llegar a una tienda.",
+      "warning": "No se puede usar en salas especiales ni en la arena del jefe final. Dejas atrás el botín sin recoger."
+    },
+    "sticky-bomb": {
+      "name": "Bomba adhesiva",
+      "appearance": "",
+      "behavior": "Adhiere una bomba retardada a un enemigo. La explosión daña al portador y a los enemigos cercanos.",
+      "response": "Adhiérela a un objetivo visible que esté cerca de otros enemigos.",
+      "warning": "La bomba sigue a su portador antes de detonar."
+    }
+  }
+}

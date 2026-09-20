@@ -1,0 +1,661 @@
+{
+  "enemies": {
+    "small-slime": {
+      "name": "小史莱姆",
+      "appearance": "小型蓝色史莱姆。",
+      "behavior": "在攻击间隙四处移动，随后蓄力攻击相邻的一格。",
+      "response": "攻击落下前离开标记格，利用攻击后的停顿反击或通过。",
+      "warning": ""
+    },
+    "orange-slime": {
+      "name": "橙色史莱姆",
+      "appearance": "体型较大的橙色史莱姆。",
+      "behavior": "四处移动并攻击相邻格，蓄力时间比小型蓝色史莱姆更短。",
+      "response": "出现攻击预警后立即离开目标格。",
+      "warning": "不要按小史莱姆较慢的攻击节奏应对。"
+    },
+    "bat": {
+      "name": "蝙蝠",
+      "appearance": "展开双翼的深灰色蝙蝠。",
+      "behavior": "四处移动。当你与它处于同一行或列时，会预警后沿直线突进。",
+      "response": "突进前向侧面移出攻击路线。",
+      "warning": "向它靠近、走进预定落点，也可能被击中。"
+    },
+    "club-skeleton": {
+      "name": "持棍骷髅",
+      "appearance": "手持木棍、没有头盔的骷髅。",
+      "behavior": "你靠近时会追来，然后蓄力攻击锁定的相邻格。",
+      "response": "引出攻击后离开标记格，利用攻击后的停顿反击。",
+      "warning": ""
+    },
+    "whip-plant": {
+      "name": "鞭藤",
+      "appearance": "扎根原地、藤蔓卷曲的绿色植物。",
+      "behavior": "停在原地，沿标记方向抽打，最远可打到两格之外。",
+      "response": "离开标记直线。你与植物之间的墙壁或实体障碍也能挡住抽打。",
+      "warning": "不必与你相邻，也能打中你。"
+    },
+    "blue-frog": {
+      "name": "蓝蛙",
+      "appearance": "长着黄色大眼睛的小型蓝色青蛙。",
+      "behavior": "在附近的格子间来回跳跃。若落到你所在的位置，会造成伤害并弹回。蛙卵团也能孵出这种青蛙。",
+      "response": "留意标记的落点，蓄力期间不要站上去。",
+      "warning": "路线受阻时可能更换跳跃路径。第7至9层的蓝蛙来自蛙卵团。"
+    },
+    "frog-eggs": {
+      "name": "蛙卵团",
+      "appearance": "固定不动的紫色圆卵团。",
+      "behavior": "在附近孵出蓝蛙。只要它孵出的青蛙还有存活，卵团就受到护盾保护。",
+      "response": "先消灭它孵出的青蛙，解除护盾，再攻击卵团。",
+      "warning": "攻击有护盾的卵团不会造成伤害。"
+    },
+    "large-whip-plant": {
+      "name": "大型鞭藤",
+      "appearance": "带紫色突起的大型绿色藤蔓生物。",
+      "behavior": "停在原地，沿标记方向抽打，最远可打到三格之外。",
+      "response": "离开标记所在的行或列，不要只沿原线后退一格。",
+      "warning": "攻击距离比小鞭藤更远。"
+    },
+    "skeleton-archer": {
+      "name": "骷髅弓箭手",
+      "appearance": "携带弓和红羽箭的骷髅。",
+      "behavior": "沿所在的行或列射箭。你靠近时它会后退，也可能在后退时准备下一箭。",
+      "response": "离开射线，或利用墙壁和实体障碍掩护，从侧面接近。",
+      "warning": "后退中的弓箭手仍能准备射击。"
+    },
+    "armored-skeleton": {
+      "name": "披甲骷髅",
+      "appearance": "戴头盔、手持明亮刀刃的骷髅。",
+      "behavior": "追逐附近的玩家，然后同时攻击上下左右四个相邻格。",
+      "response": "攻击落下前离开四个相邻格；斜角位置不在这次攻击范围内。",
+      "warning": "绕到另一个直接相邻的位置仍会被击中。"
+    },
+    "exploding-mushroom": {
+      "name": "爆炸蘑菇",
+      "appearance": "带燃烧引线的小型紫色蘑菇。",
+      "behavior": "你靠近时启动，在引线燃烧期间追赶，最后停下爆炸。投掷蘑菇也会把它们抛到你附近。",
+      "response": "利用爆炸前最后的静止预警，完全离开标记的爆炸范围。",
+      "warning": "爆炸也覆盖斜角，周围八格都危险。"
+    },
+    "party-hat-ghost": {
+      "name": "派对帽幽灵",
+      "appearance": "戴粉色派对帽的浅薄荷色幽灵。",
+      "behavior": "缓慢跟随并挡路，但不会攻击。在你身边停留一段时间后会惊慌逃开，随后再回来。",
+      "response": "绕开它，或趁它退开时穿过拥挤的通道。",
+      "warning": "无法击杀。"
+    },
+    "hat-frog": {
+      "name": "草帽蛙",
+      "appearance": "戴宽檐草帽的粉色青蛙。",
+      "behavior": "平时四处移动，你靠近后会准备向你短跳，每次跳跃都会重新选择落点。",
+      "response": "避开标记落点。它逐渐靠近时，要重新查看每次预警。",
+      "warning": "它不会像蓝蛙一样维持固定的往返路线。"
+    },
+    "pale-ghost": {
+      "name": "浅色幽灵",
+      "appearance": "没有帽子、长着黄色眼睛的浅青色幽灵。",
+      "behavior": "缓慢跟随并蓄力攻击相邻格。多次攻击后会短暂惊慌逃开。",
+      "response": "离开标记的攻击格，并保持一条能绕过去的路线。",
+      "warning": "无法击杀，而且与派对帽幽灵不同，它会造成伤害。"
+    },
+    "flame-orb": {
+      "name": "火焰球",
+      "appearance": "带深色面孔、悬浮的橙色火球。",
+      "behavior": "与你处于同一行或列时，会预警后沿直线突进，发动距离比蝙蝠更远。",
+      "response": "向侧面离开标记直线，不要走向它的落点。",
+      "warning": "在畅通的行或列上，距离远并不代表安全。"
+    },
+    "orange-imp": {
+      "name": "橙色小鬼",
+      "appearance": "头顶尖锐、带深色冠脊的橙色生物。",
+      "behavior": "从远处追来，随后蓄力攻击一个相邻格。",
+      "response": "蓄力时离开目标格，利用攻击后的停顿反击。",
+      "warning": ""
+    },
+    "dark-imp": {
+      "name": "深色小鬼",
+      "appearance": "炭灰色身体，眼睛发光，头部有橙色裂纹的生物。",
+      "behavior": "从远处追来，同时攻击上下左右四个相邻格。",
+      "response": "攻击前离开相邻的十字范围，移到斜角或更远的位置。",
+      "warning": "换到另一个直接相邻的位置，仍在攻击范围内。"
+    },
+    "lobbing-mushroom": {
+      "name": "投掷蘑菇",
+      "appearance": "带粉色斑点、顶部冒烟的大型紫色蘑菇。",
+      "behavior": "停在原地，不断向你附近的空格投掷小型爆炸蘑菇。",
+      "response": "留意每只蘑菇的落点并躲开爆炸，击败投掷者可阻止它继续投掷。",
+      "warning": "抛出的蘑菇是独立敌人，各自有引线倒计时。"
+    },
+    "hooded-ghost": {
+      "name": "兜帽幽灵",
+      "appearance": "戴深蓝色兜帽、长着黄色眼睛的幽灵。",
+      "behavior": "跟随速度比浅色幽灵更慢，但相邻攻击更重。多次攻击后会短暂逃开。",
+      "response": "持续离开标记攻击格，趁它退开、道路空出时通过。",
+      "warning": "无法击杀。移动较慢不代表攻击预警更长。"
+    },
+    "chest-mimic": {
+      "name": "宝箱怪",
+      "appearance": "露出牙齿和长舌的宝箱。",
+      "behavior": "在普通楼层伪装成宝箱，现形时立即突袭相邻玩家，之后会追逐并进行有预警的近战攻击。",
+      "response": "开宝箱前保留足以承受突袭的能量。现形后避开标记格，在攻击间隙反击。",
+      "warning": "首次突袭没有通常的蓄力预警。"
+    },
+    "pot-mimic": {
+      "name": "罐子怪",
+      "appearance": "现形后露出锯齿状嘴巴的紫色罐子。",
+      "behavior": "在普通楼层伪装成罐子，现形时立即突袭相邻玩家。之后会追逐，近战蓄力比宝箱怪更短。",
+      "response": "打碎罐子时要预料可能的突袭，之后一旦出现攻击预警就及时移动。",
+      "warning": "现形攻击可能在你获得闪避回合之前命中。"
+    },
+    "sir-jackalot": {
+      "name": "杰卡洛特爵士",
+      "appearance": "手持长矛、身披重甲的高大首领。",
+      "behavior": "瞄准宽阔区域进行长矛突刺，并随攻击前进。生命值降至一半时会跳跃并准备环形冲击波，此后突刺更快、伤害更高。",
+      "response": "完全离开标记的长矛攻击带，跳跃后再避开冲击波圆环。每次攻击前重新确认退路。",
+      "warning": "突刺后没有普通敌人那样的恢复停顿。"
+    }
+  },
+  "cells": {
+    "open-floor": {
+      "name": "普通地面",
+      "appearance": "地牢墙壁之间可以行走的地面。",
+      "behavior": "沿普通地面可以在迷宫中移动。",
+      "response": "规划路线时避开敌人、障碍和可见危险。",
+      "warning": "不同区域的地面图案会变化，不能仅凭颜色判断是否会造成伤害。"
+    },
+    "walls": {
+      "name": "墙壁与石柱",
+      "appearance": "房间边界的墙体，以及室内的实体方块。",
+      "behavior": "墙壁阻挡移动，隔开房间内的通路。",
+      "response": "通过门口和走廊绕行。",
+      "warning": ""
+    },
+    "rocks": {
+      "name": "岩石",
+      "appearance": "放在地面上的坚硬岩石。",
+      "behavior": "岩石会挡路，无法像罐子或木箱那样打碎。",
+      "response": "寻找绕行路线。",
+      "warning": ""
+    },
+    "wooden-walkways": {
+      "name": "木质步道装饰",
+      "appearance": "横跨部分房间的木板或梯子状装饰。",
+      "behavior": "它们是场景装饰，不是另一条可攀爬的路线。",
+      "response": "继续沿装饰下方可行走的地面前进。",
+      "warning": ""
+    },
+    "torches": {
+      "name": "火把",
+      "appearance": "安装在地牢墙壁上的动态火焰。",
+      "behavior": "火把照亮房间附近的区域。",
+      "response": "借助亮处观察周围环境。",
+      "warning": ""
+    },
+    "spikes": {
+      "name": "地刺",
+      "appearance": "尖刺会伸出和缩回的地板装置。",
+      "behavior": "地刺随回合交替变化，在脚下升起时会造成伤害。",
+      "response": "观察节奏和预警后再穿过。",
+      "warning": "站在地刺板上攻击或等待，同样会推进其周期。"
+    },
+    "wall-arrow-traps": {
+      "name": "墙壁箭陷阱",
+      "appearance": "墙上的发射器，箭矢横穿地面。",
+      "behavior": "发射器反复射箭，箭矢随回合沿直线前进。",
+      "response": "箭矢到达前离开发射路线。",
+      "warning": "没有可绕开的压力板，发射器会自动射击。"
+    },
+    "lava": {
+      "name": "熔岩",
+      "appearance": "炎热深层区域中流动的熔岩斑块。",
+      "behavior": "回合结束时站在熔岩中心会损失能量。",
+      "response": "绕开熔岩中心；若落在上面，应尽快移开。",
+      "warning": "站在上面攻击或等待，仍会受到接触伤害。"
+    },
+    "lightning-warning": {
+      "name": "落雷预警",
+      "appearance": "风暴期间，地面出现带感叹号的脉动标记。",
+      "behavior": "标记格即将遭到闪电打击。",
+      "response": "下一次行动离开标记格。",
+      "warning": "这是风暴的临时预警，不是永久地形。"
+    },
+    "fountains": {
+      "name": "喷泉",
+      "appearance": "靠墙发光的喷泉，水池延伸到地面。",
+      "behavior": "踏上底部水池格可恢复一次能量，之后喷泉会变暗。",
+      "response": "需要能量时走上水池格。",
+      "warning": "即使能量已满，踏上去也会消耗这次恢复。"
+    },
+    "shrine": {
+      "name": "神龛",
+      "appearance": "显示治疗价格的大型神龛。",
+      "behavior": "攻击一次查看，再攻击一次购买治疗。只要付得起且能量未满，就可继续购买恢复。",
+      "response": "每次使用前查看当前价格。",
+      "warning": "反复治疗会使显示的价格上涨。"
+    },
+    "pots": {
+      "name": "罐子",
+      "appearance": "房间里散布着各种形状的小罐子。",
+      "behavior": "罐子在打碎前会挡路，破碎后可能留下掉落物。",
+      "response": "攻击相邻罐子将其打碎，再拾取掉落物。",
+      "warning": "罐子可能是会现形攻击的罐子怪。"
+    },
+    "crates": {
+      "name": "木箱",
+      "appearance": "地牢地面上的木箱。",
+      "behavior": "木箱在打碎前会挡路，破碎后可能留下掉落物。",
+      "response": "攻击相邻木箱，再查看清出的格子是否有掉落物。",
+      "warning": ""
+    },
+    "chests": {
+      "name": "宝箱",
+      "appearance": "放在地牢格子上的关闭宝箱。",
+      "behavior": "走到普通宝箱旁边时，它会打开并在附近散落掉落物。",
+      "response": "从空旷位置接近，然后收集散落物。",
+      "warning": "宝箱可能触发宝箱怪突袭，而不是正常打开。"
+    },
+    "golden-corn": {
+      "name": "黄金玉米秆",
+      "appearance": "在格子上摇曳生长的金色玉米。",
+      "behavior": "MoG x YF活动期间，打断玉米秆会留下黄金玉米掉落物。",
+      "response": "攻击玉米秆，再走上掉落物所在格。",
+      "warning": "属于活动内容，是否出现取决于活动是否开启。"
+    },
+    "floor-stairs": {
+      "name": "楼层阶梯",
+      "appearance": "标示前进方向的阶梯格。",
+      "behavior": "踏上普通出口阶梯会打开下楼确认。",
+      "response": "确认下楼前，先收集想带走的掉落物。",
+      "warning": ""
+    },
+    "special-room-stairs": {
+      "name": "特殊房间入口",
+      "appearance": "标有房间名称的特殊入口标记。",
+      "behavior": "踏上后可确认进入所标示的特殊房间。",
+      "response": "阅读房间名称，准备好后再确认。",
+      "warning": ""
+    },
+    "wall-portals": {
+      "name": "墙上传送门",
+      "appearance": "嵌在墙上、持续发光的传送门。",
+      "behavior": "站到传送门前，可选择前往同层与之相连的传送门。",
+      "response": "查看显示的费用，再确认传送。",
+      "warning": "传送不会带你进入下一层。"
+    },
+    "unknown-trainer": {
+      "name": "神秘训练师",
+      "appearance": "站在地牢墙边等候的角色。",
+      "behavior": "花费能量并交出一个符合条件的现有天赋，换取随机新天赋。",
+      "response": "走向训练师，查看能量费用，再选择交出哪个符合条件的天赋。交换完成后才会揭晓替代天赋。",
+      "warning": "原天赋的强化会失去，新天赋从未强化状态开始。"
+    },
+    "armory-pedestals": {
+      "name": "军械库展台",
+      "appearance": "军械库或圣所中，带价格的物品展示图标。",
+      "behavior": "攻击一次查看物品，允许购买时再攻击一次即可买下。",
+      "response": "购买前阅读物品说明、价格和背包要求。",
+      "warning": ""
+    },
+    "armory-shopkeeper": {
+      "name": "军械库商人",
+      "appearance": "站在军械库展台之间的角色。",
+      "behavior": "商人在商品旁站立，实际购买通过物品展台进行。",
+      "response": "查看想购买物品所在的展台。",
+      "warning": ""
+    },
+    "energy-orbs": {
+      "name": "能量球",
+      "appearance": "地面上发光的能量掉落物。",
+      "behavior": "拾取能量球可恢复能量，但不会超过上限。",
+      "response": "走到所在格即可拾取。",
+      "warning": "部分散落物放置过多回合后会消失。"
+    },
+    "loose-pickups": {
+      "name": "散落物",
+      "appearance": "地面上的资源图标和经验球。",
+      "behavior": "走到掉落物所在格即可收集，部分效果也能收取附近资源。",
+      "response": "离开房间前收集有用的掉落物。",
+      "warning": "开始闪烁或渐隐的掉落物即将消失。"
+    },
+    "item-pickups": {
+      "name": "消耗品掉落",
+      "appearance": "地面上的消耗品图标。",
+      "behavior": "必须直接踏上所在格才能拾取；物品栏满时会出现背包选择。",
+      "response": "选择替换前先查看现有物品。",
+      "warning": "收取附近资源的效果不会自动拾取消耗品。"
+    },
+    "frozen-pickups": {
+      "name": "冰冻掉落物",
+      "appearance": "暴风雪中被冰块包裹的掉落物。",
+      "behavior": "冰块阻止拾取，必须攻击破冰，等待不会使其解冻。",
+      "response": "击打冰块，再收集露出的掉落物。",
+      "warning": "冰冻期间消失倒计时暂停，破冰后继续。"
+    },
+    "boss-reward-chest": {
+      "name": "首领奖励宝箱",
+      "appearance": "最终首领倒下后留下的大宝箱。",
+      "behavior": "宝箱会占据所在位置，多次攻击后打开并释放奖励掉落物。",
+      "response": "持续攻击直到打开，收集奖励后再离开。",
+      "warning": ""
+    },
+    "boss-exit-gate": {
+      "name": "首领出口门",
+      "appearance": "最终竞技场中守住阶梯的栅栏门。",
+      "behavior": "首领存活时阻挡出口，击败首领后打开。",
+      "response": "击败首领、收集奖励，再走向出口阶梯结束本次冒险。",
+      "warning": ""
+    }
+  },
+  "talents": {
+    "apex-hunter": {
+      "name": "顶级猎手",
+      "appearance": "",
+      "behavior": "提高对满血敌人的暴击几率。",
+      "response": "用它强化对未受伤敌人的首次攻击。",
+      "warning": ""
+    },
+    "glass-cannon": {
+      "name": "玻璃大炮",
+      "appearance": "",
+      "behavior": "提高伤害，但降低能量上限。",
+      "response": "能应对较低能量储备时再选择。",
+      "warning": "选择时，当前能量超过新上限的部分也会失去。"
+    },
+    "sharp-blade": {
+      "name": "利刃",
+      "appearance": "",
+      "behavior": "提高你造成的伤害。",
+      "response": "适合想直接增加伤害，又不依赖低能量或受伤目标条件时选择。",
+      "warning": ""
+    },
+    "berserker": {
+      "name": "狂战士",
+      "appearance": "",
+      "behavior": "能量较低时提高伤害。",
+      "response": "加成生效时加以利用，同时保留足够的生存和移动能量。",
+      "warning": "加成取决于当前能量。"
+    },
+    "cleave": {
+      "name": "顺劈",
+      "appearance": "",
+      "behavior": "攻击时也会伤害你身旁的敌人。",
+      "response": "多个敌人与你相邻时，攻击可发挥额外伤害效果。",
+      "warning": "站在多个敌人身边仍然危险。"
+    },
+    "poison-blade": {
+      "name": "毒刃",
+      "appearance": "",
+      "behavior": "攻击有机会使非首领敌人中毒，持续受到伤害。",
+      "response": "中毒生效后继续躲避，让毒伤发挥作用。",
+      "warning": "无法使最终首领中毒。"
+    },
+    "critical-strike": {
+      "name": "暴击强化",
+      "appearance": "",
+      "behavior": "提高攻击触发暴击的几率。",
+      "response": "可用于增加普通攻击中的暴击机会。",
+      "warning": "不保证每次暴击。"
+    },
+    "frenzy": {
+      "name": "狂热",
+      "appearance": "",
+      "behavior": "击杀可为下一次攻击准备伤害加成。",
+      "response": "把已准备好的伤害加成用在下一个目标上。",
+      "warning": "加成用于下一击，不会在每次击杀后永久叠加伤害。"
+    },
+    "merciless": {
+      "name": "无情",
+      "appearance": "",
+      "behavior": "提高对半血或更低生命值敌人的伤害。",
+      "response": "用来解决已经受伤的敌人。",
+      "warning": ""
+    },
+    "reach": {
+      "name": "延伸",
+      "appearance": "",
+      "behavior": "一次攻击还可命中第一个目标正后方的第二个敌人。",
+      "response": "让两个敌人与自己处于同一行或列。",
+      "warning": "第二个目标必须与第一个目标成直线。"
+    },
+    "heavy-hitter": {
+      "name": "重拳手",
+      "appearance": "",
+      "behavior": "提高攻击力，但每次攻击消耗1点能量。",
+      "response": "投入长时间战斗前，先考虑额外能量消耗。",
+      "warning": "攻击力提高的同时，攻击也会消耗能量。"
+    },
+    "apex-guard": {
+      "name": "顶级守卫",
+      "appearance": "",
+      "behavior": "减少仍处于满血状态的敌人首次攻击造成的伤害。",
+      "response": "可作为遭遇开场突袭时的一层保护。",
+      "warning": "不防御陷阱，也不会反复减免同一敌人的攻击。"
+    },
+    "divine-shield": {
+      "name": "神圣护盾",
+      "appearance": "",
+      "behavior": "有机会格挡来袭的敌人攻击。",
+      "response": "继续主动躲避，把偶尔触发的格挡作为额外保护。",
+      "warning": "无法格挡陷阱伤害，也不保证触发。"
+    },
+    "armor-plating": {
+      "name": "装甲板",
+      "appearance": "",
+      "behavior": "减少敌人攻击、地刺和箭陷阱造成的伤害。",
+      "response": "需要同时应对战斗和环境危险时可选择。",
+      "warning": "无法减免熔岩接触伤害，也不减少中毒或灼烧的持续伤害。"
+    },
+    "thorns": {
+      "name": "荆棘",
+      "appearance": "",
+      "behavior": "将部分近战攻击伤害反弹给攻击者。",
+      "response": "近战攻击未能躲开时，反弹伤害可补充输出。",
+      "warning": "不会对箭矢或陷阱进行反击。"
+    },
+    "greed": {
+      "name": "贪婪",
+      "appearance": "",
+      "behavior": "获得更多宝藏，但受到的伤害也会增加。",
+      "response": "权衡额外宝藏与更低的容错空间。",
+      "warning": "额外楼层宝藏从后续楼层开始生效，受伤加重则立即生效。"
+    },
+    "prospector": {
+      "name": "探矿者",
+      "appearance": "",
+      "behavior": "提高在可破坏物中找到物品的机会。",
+      "response": "探索时留意罐子和木箱。",
+      "warning": "不保证每个物体都掉落物品。"
+    },
+    "scavenger": {
+      "name": "拾荒者",
+      "appearance": "",
+      "behavior": "提高可破坏物产生掉落物的机会。",
+      "response": "检查沿途可破坏物，寻找补给。",
+      "warning": "不保证掉落。"
+    },
+    "swift-steps": {
+      "name": "迅捷步伐",
+      "appearance": "",
+      "behavior": "每层开始时获得免费移动次数。",
+      "response": "探索新楼层时利用这部分免费移动。",
+      "warning": "免费移动不会防止攻击或环境伤害。"
+    },
+    "survival-instinct": {
+      "name": "生存本能",
+      "appearance": "",
+      "behavior": "能量降至10以下时获得免费移动次数。",
+      "response": "利用紧急移动机会前往补给或更安全的位置。",
+      "warning": "每层只触发一次，也不会使你无敌。"
+    },
+    "momentum": {
+      "name": "势头",
+      "appearance": "",
+      "behavior": "累计击杀可获得免费移动次数。",
+      "response": "利用战斗赢得的免费移动继续探索。",
+      "warning": "所需击杀数取决于强化等级。"
+    },
+    "last-stand": {
+      "name": "背水一战",
+      "appearance": "",
+      "behavior": "受到致命一击时存活，并恢复能量。",
+      "response": "利用恢复的能量脱离危险或寻找更多补给。",
+      "warning": "每层只能救你一次。"
+    },
+    "vampiric": {
+      "name": "嗜血",
+      "appearance": "",
+      "behavior": "累计击杀可恢复能量。",
+      "response": "利用战斗后的恢复维持冒险。",
+      "warning": "所需击杀数取决于强化等级。"
+    },
+    "salvage": {
+      "name": "回收",
+      "appearance": "",
+      "behavior": "打碎普通罐子和木箱可恢复能量。",
+      "response": "需要恢复时，打碎沿途物体。",
+      "warning": "罐子怪现形不算普通破坏恢复。"
+    },
+    "renewal": {
+      "name": "复苏",
+      "appearance": "",
+      "behavior": "每层开始时恢复能量。",
+      "response": "规划下一层行动时，可考虑这次恢复。",
+      "warning": ""
+    },
+    "scout": {
+      "name": "侦察",
+      "appearance": "",
+      "behavior": "扩大视野范围。",
+      "response": "利用更宽的视野提早发现路线和危险。",
+      "warning": ""
+    },
+    "corruption": {
+      "name": "腐化",
+      "appearance": "",
+      "behavior": "攻击有机会让非首领敌人转而攻击其他敌人。",
+      "response": "趁被腐化敌人攻击时调整位置。",
+      "warning": "效果在它攻击后结束，不会成为永久盟友。"
+    },
+    "disrupt": {
+      "name": "扰乱",
+      "appearance": "",
+      "behavior": "攻击有机会短暂眩晕敌人。",
+      "response": "眩晕成功后可调整位置或继续攻击。",
+      "warning": "不保证触发眩晕。"
+    },
+    "menace": {
+      "name": "威慑",
+      "appearance": "",
+      "behavior": "击杀有机会使附近敌人恐惧，短暂停止行动。",
+      "response": "在其他敌人附近完成击杀，争取行动空隙。",
+      "warning": "无法使最终首领恐惧。"
+    }
+  },
+  "equipment": {
+    "single-shot": {
+      "name": "单发射击",
+      "appearance": "",
+      "behavior": "沿直线射击，命中路径上的第一个敌人。可使用两次。",
+      "response": "沿畅通的行或列瞄准目标。",
+      "warning": "墙壁会挡住射击，目标必须在视野内。"
+    },
+    "pogo-stick": {
+      "name": "弹跳杆",
+      "appearance": "",
+      "behavior": "跳到附近空格，也能跨过墙壁。可使用两次。",
+      "response": "选择空旷落点，越过障碍或改变位置。",
+      "warning": "特殊房间和最终首领竞技场中无法使用。"
+    },
+    "shock-grenade": {
+      "name": "电击手雷",
+      "appearance": "",
+      "behavior": "使目标区域内的敌人眩晕。可使用两次。",
+      "response": "可打断包括幽灵在内的一群敌人，争取调整位置的时间。",
+      "warning": "不造成伤害，无法眩晕最终首领。"
+    },
+    "chain-hook": {
+      "name": "链钩",
+      "appearance": "",
+      "behavior": "将直线上的第一个敌人拉向你并使其眩晕。可使用两次。",
+      "response": "沿畅通直线把远处敌人拉到身边。",
+      "warning": "无法钩住首领。落点被挡住时，目标仍会眩晕，但不会被拉动。"
+    },
+    "bomb": {
+      "name": "炸弹",
+      "appearance": "",
+      "behavior": "在附近格子放置延时炸弹，对周围区域造成伤害。",
+      "response": "放在敌人或可破坏物附近，然后离开爆炸范围。",
+      "warning": "爆炸也会伤害你。"
+    },
+    "magnet": {
+      "name": "磁铁",
+      "appearance": "",
+      "behavior": "收取附近散落物，无须逐个走上去。",
+      "response": "范围内聚集多个掉落物时使用。",
+      "warning": "不会把消耗品掉落物收进背包。"
+    },
+    "midas-touch": {
+      "name": "点金术",
+      "appearance": "",
+      "behavior": "让下一次符合条件的攻击把敌人变成黄金雕像，击碎雕像可获得宝藏。",
+      "response": "攻击想要制伏的敌人前先启用。",
+      "warning": "首领和携带特殊房间阶梯的敌人无法被变形；效果会保留，等待另一个目标。"
+    },
+    "pocket-portal": {
+      "name": "口袋传送门",
+      "appearance": "",
+      "behavior": "传送到当前楼层的随机房间。可使用两次。",
+      "response": "想离开当前位置、且不需要指定目的地时使用。",
+      "warning": "特殊房间和最终首领竞技场中无法使用。"
+    },
+    "chain-shot": {
+      "name": "连锁射击",
+      "appearance": "",
+      "behavior": "沿直线射击，首次射击完成击杀后可再射一次。",
+      "response": "首发瞄准能被你击杀的敌人。",
+      "warning": "没有击杀就没有第二发；额外射击不会继续触发更多射击。"
+    },
+    "piercing-shot": {
+      "name": "穿透射击",
+      "appearance": "",
+      "behavior": "沿直线穿透多个敌人。",
+      "response": "开火前让敌人排列在同一行或列。",
+      "warning": "墙壁会挡住射击，目标必须在视野内。"
+    },
+    "switcher": {
+      "name": "换位器",
+      "appearance": "",
+      "behavior": "与可见敌人交换位置。",
+      "response": "选择站在你想前往位置上的敌人。",
+      "warning": "无法选择首领，特殊房间内也不能使用，包括最终首领竞技场。"
+    },
+    "decoy": {
+      "name": "诱饵",
+      "appearance": "",
+      "behavior": "放置临时诱饵，吸引普通敌人靠近。可使用两次。",
+      "response": "放在附近空格上，吸引注意力并为调整位置争取时间。",
+      "warning": "放置新诱饵会替换旧诱饵。杰卡洛特爵士不会追随它。"
+    },
+    "talisman": {
+      "name": "护符",
+      "appearance": "",
+      "behavior": "捕获一个可见幽灵并将其移除。可使用三次。",
+      "response": "用来清除挡住路线的幽灵。",
+      "warning": "只能选择幽灵，不能选择普通敌人。"
+    },
+    "escape-rope": {
+      "name": "逃生绳",
+      "appearance": "",
+      "behavior": "离开当前楼层，前往神殿或军械库。",
+      "response": "用于离开危险楼层并前往商店。",
+      "warning": "特殊房间和最终首领竞技场中无法使用，未收集的掉落物会留在原处。"
+    },
+    "sticky-bomb": {
+      "name": "粘性炸弹",
+      "appearance": "",
+      "behavior": "把延时炸弹附在敌人身上，爆炸会伤害携带者及附近敌人。",
+      "response": "选择其他敌人附近的可见目标。",
+      "warning": "炸弹在爆炸前会跟随携带者移动。"
+    }
+  }
+}

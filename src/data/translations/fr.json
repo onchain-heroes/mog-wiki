@@ -1,0 +1,661 @@
+{
+  "enemies": {
+    "small-slime": {
+      "name": "Petit slime",
+      "appearance": "Un petit slime bleu.",
+      "behavior": "Se déplace entre ses attaques, puis prépare un coup sur une case adjacente.",
+      "response": "Quittez la case marquée avant le coup. Profitez de sa pause après l’attaque pour frapper ou passer.",
+      "warning": ""
+    },
+    "orange-slime": {
+      "name": "Slime orange",
+      "appearance": "Un slime orange plus imposant.",
+      "behavior": "Se déplace et attaque une case adjacente avec une préparation plus courte que celle du petit slime bleu.",
+      "response": "Quittez la case visée dès que le signal d’attaque apparaît.",
+      "warning": "Ne vous fiez pas au rythme plus lent du petit slime pour choisir quand bouger."
+    },
+    "bat": {
+      "name": "Chauve-souris",
+      "appearance": "Une chauve-souris gris foncé aux ailes déployées.",
+      "behavior": "Se déplace, puis annonce une ruée lorsque vous êtes sur sa ligne ou sa colonne.",
+      "response": "Sortez de la trajectoire en vous décalant sur le côté avant son départ.",
+      "warning": "Avancer vers elle jusqu’à sa case d’arrivée peut tout de même vous faire toucher."
+    },
+    "club-skeleton": {
+      "name": "Squelette à massue",
+      "appearance": "Un squelette sans casque portant une massue en bois.",
+      "behavior": "S’approche lorsque vous êtes à proximité, puis prépare un coup sur la case adjacente qu’il a ciblée.",
+      "response": "Provoquez son attaque, quittez la case marquée, puis frappez pendant sa pause.",
+      "warning": ""
+    },
+    "whip-plant": {
+      "name": "Plante fouet",
+      "appearance": "Une plante verte enracinée, munie d’une liane enroulée.",
+      "behavior": "Reste sur place et fouette dans une direction marquée, jusqu’à deux cases de distance.",
+      "response": "Quittez la ligne marquée. Un mur ou un obstacle solide entre la plante et vous bloque également le coup.",
+      "warning": "Elle peut vous toucher au-delà de la portée du corps à corps."
+    },
+    "blue-frog": {
+      "name": "Grenouille bleue",
+      "appearance": "Une petite grenouille bleue aux grands yeux jaunes.",
+      "behavior": "Saute entre des cases proches en faisant des allers-retours. Si elle atterrit sur vous, elle inflige des dégâts et rebondit en arrière. Les amas d’œufs produisent aussi ces grenouilles.",
+      "response": "Surveillez la case d’arrivée marquée et laissez-la libre pendant la préparation du saut.",
+      "warning": "Un saut bloqué peut modifier son trajet. Aux étages 7 à 9, ces grenouilles proviennent des amas d’œufs."
+    },
+    "frog-eggs": {
+      "name": "Amas d’œufs de grenouille",
+      "appearance": "Un amas violet et immobile d’œufs ronds.",
+      "behavior": "Produit des grenouilles bleues à proximité. Un bouclier le protège tant qu’au moins une des grenouilles qu’il a produites est encore en vie.",
+      "response": "Éliminez ses grenouilles pour retirer le bouclier, puis attaquez l’amas exposé.",
+      "warning": "Attaquer l’amas protégé ne lui inflige aucun dégât."
+    },
+    "large-whip-plant": {
+      "name": "Grande plante fouet",
+      "appearance": "Une grande créature végétale verte avec des excroissances violettes.",
+      "behavior": "Reste sur place et fouette dans une direction marquée, jusqu’à trois cases de distance.",
+      "response": "Quittez la ligne ou la colonne marquée plutôt que de reculer d’une seule case dans son axe.",
+      "warning": "Son coup porte plus loin que celui de la petite plante fouet."
+    },
+    "skeleton-archer": {
+      "name": "Squelette archer",
+      "appearance": "Un squelette portant un arc et des flèches à l’empennage rouge.",
+      "behavior": "Tire des flèches sur sa ligne ou sa colonne. Il recule lorsque vous approchez et peut préparer un nouveau tir tout en reculant.",
+      "response": "Sortez de la ligne de tir ou abritez-vous derrière un mur ou un obstacle solide. Approchez par le côté.",
+      "warning": "Un archer qui recule peut tout de même préparer un tir."
+    },
+    "armored-skeleton": {
+      "name": "Squelette en armure",
+      "appearance": "Un squelette casqué portant une lame brillante.",
+      "behavior": "Poursuit les joueurs proches, puis frappe simultanément les quatre cases directement à côté de lui.",
+      "response": "Sortez de ces quatre cases avant l’impact ; une position en diagonale est hors de portée de ce coup.",
+      "warning": "Passer sur un autre côté directement adjacent ne permet pas d’esquiver."
+    },
+    "exploding-mushroom": {
+      "name": "Champignon explosif",
+      "appearance": "Un petit champignon violet avec une mèche allumée.",
+      "behavior": "S’arme à votre approche, vous suit pendant que sa mèche brûle, puis s’arrête et explose. Les champignons lanceurs peuvent en projeter d’autres près de vous.",
+      "response": "Profitez de son dernier avertissement, lorsqu’il est immobile, pour sortir de toute la zone d’explosion marquée.",
+      "warning": "L’explosion touche aussi les diagonales : les huit cases autour de lui sont dangereuses."
+    },
+    "party-hat-ghost": {
+      "name": "Fantôme au chapeau de fête",
+      "appearance": "Un fantôme vert menthe pâle portant un chapeau de fête rose.",
+      "behavior": "Vous suit lentement et bloque des cases sans attaquer. Après être resté un moment à côté de vous, il panique et bat en retraite avant de revenir.",
+      "response": "Contournez-le et profitez de sa retraite pour traverser les passages encombrés.",
+      "warning": "Il ne peut pas être tué."
+    },
+    "hat-frog": {
+      "name": "Grenouille au chapeau",
+      "appearance": "Une grenouille rose portant un large chapeau de paille.",
+      "behavior": "Se déplace jusqu’à votre approche, puis prépare de petits sauts vers vous. Elle choisit une nouvelle destination à chaque saut.",
+      "response": "Évitez la case d’arrivée marquée. Vérifiez chaque nouveau signal lorsqu’elle se rapproche.",
+      "warning": "Contrairement à la grenouille bleue, elle ne suit pas un trajet fixe en aller-retour."
+    },
+    "pale-ghost": {
+      "name": "Fantôme pâle",
+      "appearance": "Un fantôme cyan pâle aux yeux jaunes, sans chapeau.",
+      "behavior": "Vous suit lentement et prépare des attaques adjacentes. Après plusieurs coups, il panique brièvement et s’enfuit.",
+      "response": "Quittez la case qu’il marque pour son attaque et gardez un passage libre pour le contourner.",
+      "warning": "Il ne peut pas être tué et, contrairement au fantôme au chapeau de fête, peut vous blesser."
+    },
+    "flame-orb": {
+      "name": "Orbe de feu",
+      "appearance": "Une boule de feu orange flottante avec un visage sombre.",
+      "behavior": "Annonce une ruée en ligne droite lorsque vous êtes sur sa ligne ou sa colonne. Elle peut lancer sa ruée depuis plus loin qu’une chauve-souris.",
+      "response": "Sortez de la ligne marquée par le côté au lieu d’avancer vers sa case d’arrivée.",
+      "warning": "La distance ne suffit pas à rendre sûre une ligne ou une colonne dégagée."
+    },
+    "orange-imp": {
+      "name": "Diablotin orange",
+      "appearance": "Une créature orange à la tête pointue et à la crête sombre.",
+      "behavior": "Vous poursuit de loin, puis prépare un coup sur une seule case adjacente.",
+      "response": "Quittez sa case cible pendant la préparation, puis profitez de sa récupération pour attaquer.",
+      "warning": ""
+    },
+    "dark-imp": {
+      "name": "Diablotin sombre",
+      "appearance": "Une créature couleur charbon aux yeux brillants, avec une fissure orange sur la tête.",
+      "behavior": "Vous poursuit de loin et frappe simultanément les quatre cases directement à côté de lui.",
+      "response": "Quittez la croix de cases adjacentes avant le coup. Placez-vous en diagonale ou plus loin.",
+      "warning": "Passer sur un autre côté directement adjacent vous laisse dans sa zone d’attaque."
+    },
+    "lobbing-mushroom": {
+      "name": "Champignon lanceur",
+      "appearance": "Un grand champignon violet à taches roses, dont le sommet fume.",
+      "behavior": "Reste sur place et projette régulièrement de petits champignons explosifs sur des cases libres près de vous.",
+      "response": "Surveillez chaque point de chute, sortez de la zone d’explosion et éliminez le lanceur pour arrêter ses projections.",
+      "warning": "Les champignons projetés sont des ennemis distincts, chacun avec sa propre mèche."
+    },
+    "hooded-ghost": {
+      "name": "Fantôme à capuche",
+      "appearance": "Un fantôme bleu foncé à capuche et aux yeux jaunes.",
+      "behavior": "Vous suit plus lentement que le fantôme pâle, mais ses coups adjacents sont plus puissants. Il s’enfuit brièvement après plusieurs attaques.",
+      "response": "Continuez à quitter sa case d’attaque marquée et passez lorsque sa retraite ouvre un chemin.",
+      "warning": "Il ne peut pas être tué. Son déplacement plus lent ne signifie pas que ses attaques sont annoncées plus longtemps."
+    },
+    "chest-mimic": {
+      "name": "Coffre mimique",
+      "appearance": "Un coffre qui révèle des dents et une longue langue.",
+      "behavior": "Se cache sous l’apparence d’un coffre aux étages ordinaires. Le révéler déclenche une embuscade immédiate à côté de lui ; ensuite, il vous poursuit et prépare des attaques de mêlée signalées.",
+      "response": "Gardez assez d’Énergie pour survivre à une surprise en ouvrant les coffres. Une fois révélé, évitez sa case marquée et frappez pendant sa récupération.",
+      "warning": "L’embuscade initiale n’a pas l’avertissement de préparation habituel."
+    },
+    "pot-mimic": {
+      "name": "Pot mimique",
+      "appearance": "Un pot violet qui révèle une bouche dentelée.",
+      "behavior": "Se cache sous l’apparence d’un pot aux étages ordinaires et attaque immédiatement un joueur adjacent lorsqu’il est révélé. Il poursuit ensuite sa cible avec une préparation de mêlée plus courte que celle du coffre mimique.",
+      "response": "Prévoyez une possible surprise en brisant les pots, puis déplacez-vous rapidement au prochain signal d’attaque.",
+      "warning": "L’attaque au moment de la révélation peut vous toucher avant que vous ayez un tour pour esquiver."
+    },
+    "sir-jackalot": {
+      "name": "Sir Jackalot",
+      "appearance": "Un immense boss en armure portant une longue lance.",
+      "behavior": "Prépare de larges coups de lance et avance en frappant. À la moitié de sa vie, il bondit et prépare une onde de choc en anneau ; ses coups deviennent ensuite plus rapides et plus puissants.",
+      "response": "Quittez toute la bande marquée pour la lance, puis sortez de l’anneau de l’onde de choc après son saut. Réévaluez votre issue avant chaque attaque.",
+      "warning": "Il ne marque pas la pause de récupération des ennemis ordinaires après un coup de lance."
+    }
+  },
+  "cells": {
+    "open-floor": {
+      "name": "Sol praticable",
+      "appearance": "Le sol où marcher, entre les murs du donjon.",
+      "behavior": "Le sol ordinaire vous permet de traverser le labyrinthe.",
+      "response": "Prévoyez un trajet autour des ennemis, des obstacles et des dangers visibles.",
+      "warning": "Le dessin du sol change selon le biome ; sa couleur seule ne signifie pas qu’il inflige des dégâts."
+    },
+    "walls": {
+      "name": "Murs et piliers",
+      "appearance": "Les bordures solides des salles et les blocs à l’intérieur.",
+      "behavior": "Les murs bloquent les déplacements et interrompent les passages dans une salle.",
+      "response": "Empruntez les portes et les couloirs pour les contourner.",
+      "warning": ""
+    },
+    "rocks": {
+      "name": "Rochers",
+      "appearance": "Des rochers solides posés au sol.",
+      "behavior": "Les rochers bloquent le passage et ne se brisent pas comme les pots ou les caisses.",
+      "response": "Cherchez un chemin autour d’eux.",
+      "warning": ""
+    },
+    "wooden-walkways": {
+      "name": "Passerelles en bois",
+      "appearance": "Des planches et des décorations semblables à des échelles traversant certaines parties d’une salle.",
+      "behavior": "Ce sont des éléments du décor, pas un autre chemin à escalader.",
+      "response": "Continuez sur le sol praticable sous la décoration.",
+      "warning": ""
+    },
+    "torches": {
+      "name": "Torches",
+      "appearance": "Des flammes animées fixées aux murs du donjon.",
+      "behavior": "Les torches éclairent les environs dans la salle.",
+      "response": "Profitez de la zone éclairée pour examiner les alentours.",
+      "warning": ""
+    },
+    "spikes": {
+      "name": "Pointes",
+      "appearance": "Une plaque au sol dont les pointes se lèvent et se rétractent.",
+      "behavior": "Les pointes alternent avec les tours et vous blessent lorsqu’elles se lèvent sous vos pieds.",
+      "response": "Observez leur rythme et l’avertissement avant de traverser.",
+      "warning": "Attaquer ou attendre sur la plaque fait aussi avancer son cycle."
+    },
+    "wall-arrow-traps": {
+      "name": "Pièges à flèches muraux",
+      "appearance": "Un lanceur mural dont les flèches traversent le sol.",
+      "behavior": "Le lanceur tire régulièrement ; les flèches avancent en ligne droite au fil des tours.",
+      "response": "Quittez la ligne de tir avant qu’une flèche vous atteigne.",
+      "warning": "Il n’y a pas de plaque de pression à éviter : le lanceur tire automatiquement."
+    },
+    "lava": {
+      "name": "Lave",
+      "appearance": "Des zones de matière en fusion animée dans les étages inférieurs chauds.",
+      "behavior": "Rester sur le centre en fusion fait perdre de l’Énergie à la fin d’un tour.",
+      "response": "Contournez le centre en fusion et quittez-le rapidement si vous y atterrissez.",
+      "warning": "Attaquer ou attendre dessus provoque toujours des dégâts de contact."
+    },
+    "lightning-warning": {
+      "name": "Avertissement de foudre",
+      "appearance": "Un marqueur au sol qui pulse avec un point d’exclamation pendant un orage.",
+      "behavior": "La case marquée est sur le point d’être frappée par la foudre.",
+      "response": "Quittez la case marquée lors de votre prochaine action.",
+      "warning": "C’est un avertissement temporaire lié à l’orage, pas un élément permanent du terrain."
+    },
+    "fountains": {
+      "name": "Fontaines",
+      "appearance": "Une fontaine lumineuse contre un mur, dont le bassin s’étend sur le sol.",
+      "behavior": "Marcher sur la case à sa base restaure de l’Énergie une seule fois ; la fontaine s’éteint ensuite.",
+      "response": "Marchez sur la case du bassin lorsque vous avez besoin d’Énergie.",
+      "warning": "Y entrer consomme son utilisation même si votre Énergie est déjà au maximum."
+    },
+    "shrine": {
+      "name": "Autel",
+      "appearance": "Un grand autel affichant un prix de soin.",
+      "behavior": "Attaquez une fois pour l’inspecter, puis à nouveau pour acheter un soin. Vous pouvez recommencer tant que vous pouvez payer et qu’il vous manque de l’Énergie.",
+      "response": "Lisez le prix actuel avant chaque utilisation.",
+      "warning": "Le prix affiché augmente à chaque nouveau soin."
+    },
+    "pots": {
+      "name": "Pots",
+      "appearance": "De petits pots de différentes formes disséminés dans les salles.",
+      "behavior": "Les pots bloquent le passage jusqu’à ce que vous les brisiez et peuvent libérer quelque chose à ramasser.",
+      "response": "Attaquez un pot adjacent pour le briser, puis ramassez ce qu’il laisse.",
+      "warning": "Un pot peut être un mimique et vous attaquer."
+    },
+    "crates": {
+      "name": "Caisses",
+      "appearance": "Des boîtes en bois sur le sol du donjon.",
+      "behavior": "Les caisses bloquent le passage jusqu’à ce que vous les brisiez et peuvent libérer quelque chose à ramasser.",
+      "response": "Attaquez une caisse adjacente, puis vérifiez si du butin se trouve sur la case libérée.",
+      "warning": ""
+    },
+    "chests": {
+      "name": "Coffres",
+      "appearance": "Un coffre fermé sur une case du donjon.",
+      "behavior": "Un coffre ordinaire s’ouvre lorsque vous vous déplacez à côté et disperse du butin aux alentours.",
+      "response": "Approchez depuis une case dégagée, puis ramassez le butin dispersé.",
+      "warning": "Un coffre peut déclencher une embuscade de mimique au lieu de s’ouvrir."
+    },
+    "golden-corn": {
+      "name": "Pieds de maïs doré",
+      "appearance": "Du maïs doré qui pousse et ondule sur une case.",
+      "behavior": "Pendant l’événement MoG × YF, briser un pied laisse du maïs doré à ramasser.",
+      "response": "Attaquez le pied, puis marchez sur ce qu’il a laissé.",
+      "warning": "Cet élément est lié à un événement ; sa disponibilité dépend de l’activité de celui-ci."
+    },
+    "floor-stairs": {
+      "name": "Escaliers d’étage",
+      "appearance": "Une case d’escalier indiquant la suite du parcours.",
+      "behavior": "Entrer sur un escalier de sortie ordinaire ouvre une confirmation de descente.",
+      "response": "Ramassez ce que vous voulez avant de confirmer la descente.",
+      "warning": ""
+    },
+    "special-room-stairs": {
+      "name": "Escaliers de salle spéciale",
+      "appearance": "Un marqueur d’entrée distinct portant le nom d’une salle.",
+      "behavior": "Entrer dessus propose de rejoindre la salle spéciale indiquée.",
+      "response": "Lisez le nom de la salle et confirmez lorsque vous êtes prêt.",
+      "warning": ""
+    },
+    "wall-portals": {
+      "name": "Portails muraux",
+      "appearance": "Des portails lumineux animés intégrés aux murs.",
+      "behavior": "Se placer devant un portail propose de rejoindre le portail qui lui est lié au même étage.",
+      "response": "Vérifiez le coût affiché, puis confirmez pour vous téléporter.",
+      "warning": "La téléportation ne vous fait pas passer à l’étage suivant."
+    },
+    "unknown-trainer": {
+      "name": "Entraîneur inconnu",
+      "appearance": "Un personnage qui attend contre un mur du donjon.",
+      "behavior": "Propose un échange : dépenser de l’Énergie et céder un talent échangeable que vous possédez contre un nouveau talent aléatoire.",
+      "response": "Avancez contre l’entraîneur, vérifiez le coût en Énergie, puis choisissez le talent à céder parmi ceux proposés. Le remplacement est révélé après l’échange.",
+      "warning": "Les améliorations de l’ancien talent sont perdues ; le nouveau talent commence sans amélioration."
+    },
+    "armory-pedestals": {
+      "name": "Présentoirs de l’Armurerie",
+      "appearance": "Des icônes d’objets avec leur prix dans l’Armurerie ou le Sanctuaire.",
+      "behavior": "Attaquez une fois pour examiner l’objet, puis une seconde fois pour l’acheter si les conditions sont remplies.",
+      "response": "Lisez la description, le prix et les conditions d’inventaire avant d’acheter.",
+      "warning": ""
+    },
+    "armory-shopkeeper": {
+      "name": "Marchand de l’Armurerie",
+      "appearance": "Un personnage au milieu des présentoirs de l’Armurerie.",
+      "behavior": "Le marchand se tient près des objets en vente ; les achats se font sur les présentoirs.",
+      "response": "Examinez le présentoir qui porte l’objet souhaité.",
+      "warning": ""
+    },
+    "energy-orbs": {
+      "name": "Orbes d’Énergie",
+      "appearance": "Des orbes lumineux d’Énergie posés au sol.",
+      "behavior": "Ramasser un orbe restaure de l’Énergie, sans dépasser votre maximum.",
+      "response": "Marchez dessus pour le ramasser.",
+      "warning": "Certains éléments laissés au sol disparaissent après un trop grand nombre de tours."
+    },
+    "loose-pickups": {
+      "name": "Butin au sol",
+      "appearance": "Des icônes de ressources et des orbes d’expérience posés au sol.",
+      "behavior": "Marcher dessus permet de les ramasser. Certains effets récupèrent les ressources proches pour vous.",
+      "response": "Ramassez le butin utile avant de quitter la salle.",
+      "warning": "Les éléments qui clignotent ou s’estompent vont bientôt disparaître."
+    },
+    "item-pickups": {
+      "name": "Objets au sol",
+      "appearance": "Une icône d’objet consommable sur une case.",
+      "behavior": "Vous devez marcher directement sur un objet pour le ramasser ; si l’inventaire est plein, un choix s’ouvre.",
+      "response": "Vérifiez votre objet actuel avant de choisir un remplacement.",
+      "warning": "Les effets qui récupèrent les ressources proches ne ramassent pas automatiquement les objets."
+    },
+    "frozen-pickups": {
+      "name": "Butin gelé",
+      "appearance": "Du butin enfermé dans un bloc de glace pendant un blizzard.",
+      "behavior": "La glace empêche le ramassage tant que vous ne l’avez pas frappée. Elle ne fond pas simplement en attendant.",
+      "response": "Frappez la glace, puis ramassez le butin révélé.",
+      "warning": "Son délai de disparition s’arrête pendant le gel et reprend lorsque la glace se brise."
+    },
+    "boss-reward-chest": {
+      "name": "Coffre de récompense du boss",
+      "appearance": "Un grand coffre laissé après la défaite du boss final.",
+      "behavior": "Le coffre bloque son emplacement et s’ouvre après plusieurs attaques, libérant ses récompenses.",
+      "response": "Continuez à le frapper jusqu’à son ouverture, puis ramassez le butin avant de prendre la sortie.",
+      "warning": ""
+    },
+    "boss-exit-gate": {
+      "name": "Grille de sortie du boss",
+      "appearance": "Un passage barré qui protège l’accès aux escaliers dans l’arène finale.",
+      "behavior": "La grille bloque la sortie tant que le boss est vivant et s’ouvre après sa défaite.",
+      "response": "Battez le boss, ramassez les récompenses, puis rejoignez les escaliers de sortie pour terminer la partie.",
+      "warning": ""
+    }
+  },
+  "talents": {
+    "apex-hunter": {
+      "name": "Chasseur suprême",
+      "appearance": "",
+      "behavior": "Améliore les chances de coup critique contre les ennemis qui ont toute leur vie.",
+      "response": "Profitez-en pour votre première frappe sur un ennemi intact.",
+      "warning": ""
+    },
+    "glass-cannon": {
+      "name": "Canon de verre",
+      "appearance": "",
+      "behavior": "Augmente les dégâts, mais réduit votre Énergie maximale.",
+      "response": "Choisissez-le si vous pouvez gérer une réserve d’Énergie plus petite.",
+      "warning": "Le choisir supprime aussi toute votre Énergie actuelle au-dessus du nouveau plafond."
+    },
+    "sharp-blade": {
+      "name": "Lame affûtée",
+      "appearance": "",
+      "behavior": "Augmente les dégâts que vous infligez.",
+      "response": "Choisissez-le pour renforcer vos dégâts sans condition d’Énergie basse ou de cible déjà blessée.",
+      "warning": ""
+    },
+    "berserker": {
+      "name": "Berserker",
+      "appearance": "",
+      "behavior": "Augmente vos dégâts lorsque votre Énergie est basse.",
+      "response": "Profitez du bonus lorsqu’il s’active, en gardant assez d’Énergie pour survivre et vous déplacer.",
+      "warning": "Le bonus dépend de votre Énergie actuelle."
+    },
+    "cleave": {
+      "name": "Balayage",
+      "appearance": "",
+      "behavior": "Votre frappe blesse aussi les ennemis à côté de vous.",
+      "response": "Attaquez lorsque plusieurs ennemis sont adjacents pour profiter des dégâts supplémentaires.",
+      "warning": "Cela ne supprime pas le danger de rester à côté de plusieurs ennemis."
+    },
+    "poison-blade": {
+      "name": "Lame empoisonnée",
+      "appearance": "",
+      "behavior": "Vos frappes peuvent empoisonner un ennemi autre qu’un boss et lui infliger des dégâts dans la durée.",
+      "response": "Une fois le poison appliqué, continuez à esquiver pendant qu’il agit.",
+      "warning": "Ne peut pas empoisonner le boss final."
+    },
+    "critical-strike": {
+      "name": "Bonus critique",
+      "appearance": "",
+      "behavior": "Améliore vos chances d’infliger un coup critique.",
+      "response": "Choisissez-le pour favoriser les coups critiques lors de vos attaques ordinaires.",
+      "warning": "Un coup critique n’est pas garanti."
+    },
+    "frenzy": {
+      "name": "Frénésie",
+      "appearance": "",
+      "behavior": "Éliminer des ennemis peut préparer des dégâts supplémentaires pour votre prochaine frappe.",
+      "response": "Utilisez le bonus préparé contre votre prochaine cible.",
+      "warning": "Renforce la prochaine frappe, sans augmenter définitivement les dégâts après chaque élimination."
+    },
+    "merciless": {
+      "name": "Sans pitié",
+      "appearance": "",
+      "behavior": "Augmente les dégâts contre les ennemis à la moitié de leur vie ou moins.",
+      "response": "Profitez-en pour achever les ennemis que vous avez déjà blessés.",
+      "warning": ""
+    },
+    "reach": {
+      "name": "Allonge",
+      "appearance": "",
+      "behavior": "Une frappe peut aussi toucher un second ennemi directement derrière votre première cible.",
+      "response": "Alignez deux ennemis sur la même ligne ou colonne.",
+      "warning": "La seconde cible doit être alignée avec la première."
+    },
+    "heavy-hitter": {
+      "name": "Frappe lourde",
+      "appearance": "",
+      "behavior": "Augmente la puissance d’attaque, mais chaque frappe coûte 1 Énergie.",
+      "response": "Tenez compte de ce coût supplémentaire avant d’engager un long combat.",
+      "warning": "Une attaque plus puissante implique aussi de dépenser de l’Énergie en frappant."
+    },
+    "apex-guard": {
+      "name": "Garde suprême",
+      "appearance": "",
+      "behavior": "Réduit le premier coup d’un ennemi qui a encore toute sa vie.",
+      "response": "Considérez-le comme une protection contre une première embuscade.",
+      "warning": "Ne protège pas des pièges et ne réduit pas les attaques répétées d’un même ennemi."
+    },
+    "divine-shield": {
+      "name": "Bouclier divin",
+      "appearance": "",
+      "behavior": "Peut bloquer un coup porté par un ennemi.",
+      "response": "Continuez à esquiver ; ce blocage occasionnel est une protection supplémentaire.",
+      "warning": "Ne bloque pas les dégâts des pièges et n’est pas garanti."
+    },
+    "armor-plating": {
+      "name": "Plaques d’armure",
+      "appearance": "",
+      "behavior": "Réduit les dégâts des attaques ennemies et des pièges comme les pointes et les flèches.",
+      "response": "Choisissez-le pour vous protéger dans les combats et face aux dangers.",
+      "warning": "Ne réduit pas les dégâts de la lave ni les dégâts dans la durée du poison et des brûlures."
+    },
+    "thorns": {
+      "name": "Épines",
+      "appearance": "",
+      "behavior": "Renvoie une partie des dégâts des coups de mêlée à leur auteur.",
+      "response": "Considérez les dégâts renvoyés comme un bonus lorsqu’un coup de mêlée vous atteint.",
+      "warning": "Ne riposte pas aux flèches ou aux pièges."
+    },
+    "greed": {
+      "name": "Avidité",
+      "appearance": "",
+      "behavior": "Augmente le Trésor gagné, au prix de dégâts subis plus importants.",
+      "response": "Pesez le Trésor supplémentaire face à une marge d’erreur plus faible.",
+      "warning": "Le Trésor supplémentaire des étages commence aux étages suivants ; la pénalité de dégâts s’applique immédiatement."
+    },
+    "prospector": {
+      "name": "Prospecteur",
+      "appearance": "",
+      "behavior": "Augmente les chances de trouver un objet dans les éléments destructibles.",
+      "response": "Examinez les pots et les caisses pendant votre exploration.",
+      "warning": "Ne garantit pas un objet dans chaque élément."
+    },
+    "scavenger": {
+      "name": "Récupérateur",
+      "appearance": "",
+      "behavior": "Augmente les chances que les éléments destructibles produisent du butin.",
+      "response": "Vérifiez les éléments destructibles sur votre trajet pour vous ravitailler.",
+      "warning": "Ne garantit pas un butin."
+    },
+    "swift-steps": {
+      "name": "Pas rapides",
+      "appearance": "",
+      "behavior": "Accorde des déplacements gratuits au début de chaque étage.",
+      "response": "Profitez de ces déplacements gratuits pour explorer le nouvel étage.",
+      "warning": "Le déplacement gratuit ne protège pas des dégâts des attaques ou des dangers."
+    },
+    "survival-instinct": {
+      "name": "Instinct de survie",
+      "appearance": "",
+      "behavior": "Accorde des déplacements gratuits lorsque l’Énergie passe sous 10.",
+      "response": "Utilisez ces déplacements de secours pour atteindre des ressources ou une position plus sûre.",
+      "warning": "Ne s’active qu’une fois par étage et ne vous rend pas invulnérable."
+    },
+    "momentum": {
+      "name": "Élan",
+      "appearance": "",
+      "behavior": "Les éliminations vous rapprochent de l’obtention de déplacements gratuits.",
+      "response": "Utilisez les déplacements gratuits gagnés au combat pour poursuivre l’exploration.",
+      "warning": "Le nombre d’éliminations nécessaires dépend du niveau d’amélioration."
+    },
+    "last-stand": {
+      "name": "Dernier rempart",
+      "appearance": "",
+      "behavior": "Permet de survivre à un coup fatal et de récupérer de l’Énergie.",
+      "response": "Profitez de la récupération pour fuir le danger ou atteindre une autre source d’Énergie.",
+      "warning": "Ne peut vous sauver qu’une fois par étage."
+    },
+    "vampiric": {
+      "name": "Vampirisme",
+      "appearance": "",
+      "behavior": "Les éliminations vous rapprochent d’une récupération d’Énergie.",
+      "response": "Utilisez les bénéfices du combat pour prolonger votre partie.",
+      "warning": "Le nombre d’éliminations nécessaires dépend du niveau d’amélioration."
+    },
+    "salvage": {
+      "name": "Récupération",
+      "appearance": "",
+      "behavior": "Briser les pots et les caisses ordinaires restaure de l’Énergie.",
+      "response": "Brisez les éléments sur votre trajet lorsque vous avez besoin de récupération.",
+      "warning": "Révéler un mimique ne donne pas la récupération d’un élément destructible ordinaire."
+    },
+    "renewal": {
+      "name": "Renouveau",
+      "appearance": "",
+      "behavior": "Restaure de l’Énergie au début de chaque étage.",
+      "response": "Intégrez cette récupération à vos plans pour l’étage suivant.",
+      "warning": ""
+    },
+    "scout": {
+      "name": "Éclaireur",
+      "appearance": "",
+      "behavior": "Étend votre portée de vision.",
+      "response": "Profitez de cette vue élargie pour repérer plus tôt les chemins et les menaces.",
+      "warning": ""
+    },
+    "corruption": {
+      "name": "Corruption",
+      "appearance": "",
+      "behavior": "Vos frappes peuvent retourner un ennemi autre qu’un boss contre un autre ennemi.",
+      "response": "Profitez de cette interruption pour vous replacer pendant qu’il attaque.",
+      "warning": "L’effet prend fin après son attaque ; ce n’est pas un allié permanent."
+    },
+    "disrupt": {
+      "name": "Perturbation",
+      "appearance": "",
+      "behavior": "Vos frappes peuvent brièvement étourdir un ennemi.",
+      "response": "Profitez d’un étourdissement réussi pour vous replacer ou continuer à attaquer.",
+      "warning": "L’étourdissement n’est pas garanti."
+    },
+    "menace": {
+      "name": "Menace",
+      "appearance": "",
+      "behavior": "Une élimination peut effrayer les ennemis proches et interrompre brièvement leurs actions.",
+      "response": "Éliminez un ennemi près des autres pour tenter de créer une ouverture.",
+      "warning": "N’effraie pas le boss final."
+    }
+  },
+  "equipment": {
+    "single-shot": {
+      "name": "Tir simple",
+      "appearance": "",
+      "behavior": "Tire en ligne droite et touche le premier ennemi sur sa trajectoire. Deux utilisations.",
+      "response": "Placez-vous sur une ligne ou une colonne dégagée vers votre cible.",
+      "warning": "Les murs arrêtent le tir, et les cibles doivent être dans votre champ de vision."
+    },
+    "pogo-stick": {
+      "name": "Bâton sauteur",
+      "appearance": "",
+      "behavior": "Permet de sauter sur une case libre proche, y compris à travers les murs. Deux utilisations.",
+      "response": "Choisissez une case d’arrivée dégagée pour franchir un obstacle ou changer de position.",
+      "warning": "Indisponible dans les salles spéciales et l’arène du boss final."
+    },
+    "shock-grenade": {
+      "name": "Grenade étourdissante",
+      "appearance": "",
+      "behavior": "Étourdit les ennemis dans la zone ciblée. Deux utilisations.",
+      "response": "Utilisez-la pour interrompre un groupe, y compris les fantômes, pendant que vous vous replacez.",
+      "warning": "N’inflige aucun dégât et ne peut pas étourdir le boss final."
+    },
+    "chain-hook": {
+      "name": "Grappin à chaîne",
+      "appearance": "",
+      "behavior": "Attire vers vous le premier ennemi sur une ligne et l’étourdit. Deux utilisations.",
+      "response": "Utilisez une ligne dégagée pour amener un ennemi éloigné à votre portée.",
+      "warning": "Ne peut pas accrocher les boss. Si la destination est bloquée, la cible est étourdie sans être attirée."
+    },
+    "bomb": {
+      "name": "Bombe",
+      "appearance": "",
+      "behavior": "Place une explosion retardée sur une case proche, qui inflige des dégâts aux alentours.",
+      "response": "Placez-la près des ennemis ou des éléments destructibles, puis quittez la zone d’explosion.",
+      "warning": "L’explosion peut aussi vous blesser."
+    },
+    "magnet": {
+      "name": "Aimant",
+      "appearance": "",
+      "behavior": "Récupère le butin au sol à proximité sans marcher sur chaque élément.",
+      "response": "Utilisez-le lorsque plusieurs éléments à ramasser sont à portée.",
+      "warning": "Ne place pas les objets consommables au sol dans votre inventaire."
+    },
+    "midas-touch": {
+      "name": "Toucher de Midas",
+      "appearance": "",
+      "behavior": "Une fois activé, transforme le prochain ennemi compatible que vous frappez en statue d’or. Brisez la statue pour obtenir du Trésor.",
+      "response": "Activez-le avant de frapper l’ennemi que vous voulez neutraliser.",
+      "warning": "Les boss et les ennemis portant des escaliers de salle spéciale ne peuvent pas être transformés ; l’effet reste prêt pour une autre cible."
+    },
+    "pocket-portal": {
+      "name": "Portail de poche",
+      "appearance": "",
+      "behavior": "Vous téléporte dans une salle aléatoire de l’étage actuel. Deux utilisations.",
+      "response": "Utilisez-le pour quitter votre position sans choisir votre destination.",
+      "warning": "Indisponible dans les salles spéciales et l’arène du boss final."
+    },
+    "chain-shot": {
+      "name": "Tir enchaîné",
+      "appearance": "",
+      "behavior": "Tire en ligne droite. Éliminer un ennemi avec le premier tir accorde un tir supplémentaire.",
+      "response": "Visez un ennemi que vous pouvez achever avec le premier tir.",
+      "warning": "Sans élimination, pas de second tir. Le tir bonus ne donne pas de tirs supplémentaires."
+    },
+    "piercing-shot": {
+      "name": "Tir perforant",
+      "appearance": "",
+      "behavior": "Traverse plusieurs ennemis sur une ligne droite.",
+      "response": "Alignez les ennemis sur la même ligne ou colonne avant de tirer.",
+      "warning": "Les murs arrêtent le tir, et les cibles doivent être dans votre champ de vision."
+    },
+    "switcher": {
+      "name": "Échangeur",
+      "appearance": "",
+      "behavior": "Échange votre position avec celle d’un ennemi visible.",
+      "response": "Choisissez l’ennemi dont la case vous donne la position souhaitée.",
+      "warning": "Ne peut pas cibler les boss et reste indisponible dans les salles spéciales, y compris l’arène finale."
+    },
+    "decoy": {
+      "name": "Leurre",
+      "appearance": "",
+      "behavior": "Place un appât temporaire qui attire les ennemis ordinaires. Deux utilisations.",
+      "response": "Posez-le sur une case libre proche pour détourner leur attention pendant que vous vous replacez.",
+      "warning": "Placer un nouveau leurre remplace le premier. Sir Jackalot ne le suit pas."
+    },
+    "talisman": {
+      "name": "Talisman",
+      "appearance": "",
+      "behavior": "Capture un fantôme visible et le retire. Trois utilisations.",
+      "response": "Utilisez-le pour dégager un passage bloqué par un fantôme.",
+      "warning": "Cible les fantômes, pas les ennemis ordinaires."
+    },
+    "escape-rope": {
+      "name": "Corde de fuite",
+      "appearance": "",
+      "behavior": "Quitte l’étage actuel pour rejoindre un Autel ou une Armurerie.",
+      "response": "Utilisez-la pour quitter un étage dangereux et atteindre une boutique.",
+      "warning": "Indisponible dans les salles spéciales et l’arène finale. Le butin non ramassé reste derrière vous."
+    },
+    "sticky-bomb": {
+      "name": "Bombe collante",
+      "appearance": "",
+      "behavior": "Fixe une bombe à retardement à un ennemi. L’explosion blesse son porteur et les ennemis proches.",
+      "response": "Fixez-la à une cible visible près d’autres ennemis.",
+      "warning": "La bombe suit son porteur jusqu’à l’explosion."
+    }
+  }
+}

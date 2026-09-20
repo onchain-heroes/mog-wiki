@@ -1,0 +1,61 @@
+---
+title: 'Météo et dangers'
+description: 'Reconnaissez les effets de la météo qui s’affichent pendant une partie.'
+visibility: public
+lastUpdated: 2026-09-20
+knowledgeScope: player-visible
+gameMode: arcade
+evidence: observable-gameplay
+sidebar:
+  order: 3
+---
+
+import TurnDemo from '../../../../components/TurnDemo.astro';
+
+Ouvrez **l’indicateur météo** pour lire les effets actifs sur votre étage. La météo de biome dure jusqu’à votre départ de l’étage ; la météo commune est temporaire.
+
+<span id="miasma"></span>
+
+## Miasmes
+
+Les attaques ennemies appliquent du **poison**, qui inflige des dégâts dans la durée. Un nouveau coup renouvelle l’effet.
+
+<TurnDemo kind="miasma" />
+
+## Blizzard
+
+Le butin peut geler, empêchant de le révéler ou de le ramasser. **Avancez une fois contre le butin gelé** pour briser sa glace. Attendre ne la fait pas fondre.
+
+Les attaques ennemies peuvent aussi appliquer des **engelures** : vos attaques coûtent alors de l’Énergie pendant la durée de l’effet. Un nouveau coup renouvelle les engelures.
+
+<TurnDemo kind="ice" />
+
+<span id="heatwave"></span>
+
+## Canicule
+
+Le **Mirage** rend le temps de préparation des attaques moins prévisible pour de nombreux ennemis. Leur signal d’attaque reste affiché.
+
+Les attaques ennemies appliquent aussi une **brûlure**, qui inflige des dégâts dans la durée.
+
+<TurnDemo kind="heatwave" />
+
+<span id="gale"></span>
+
+## Vent violent
+
+Les rafales vous poussent, ainsi que les ennemis et le butin au sol, d’une case dans le sens du vent. Les ennemis enracinés restent en place.
+
+<TurnDemo kind="gale" />
+
+<span id="storm"></span>
+
+## Orage
+
+La foudre marque une case, puis la frappe au tour suivant. **Quittez la marque avant l’impact.** La foudre peut blesser aussi bien les ennemis que vous.
+
+<TurnDemo kind="lightning" />
+
+## Pièges au sol
+
+Les [pointes](/fr/reference/cells/#spikes), les [pièges à flèches muraux](/fr/reference/cells/#wall-arrow-traps) et la [lave](/fr/reference/cells/#lava) sont des dangers distincts de la météo. Lisez leurs fiches avant de traverser. Attaquer ou attendre fait toujours avancer un tour : des pointes rétractées maintenant ne le resteront pas forcément après votre prochaine action.

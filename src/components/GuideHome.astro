@@ -1,0 +1,90 @@
+---
+import GuideBanner from './GuideBanner.astro';
+import { Icon } from '@astrojs/starlight/components';
+import { getLocale, localizedPath, ui } from '../i18n/ui';
+
+const locale = getLocale(Astro.locals.starlightRoute.lang);
+const t = ui[locale].home;
+const chapters = [
+  { href: '/getting-started/first-run/', icon: 'right-arrow' },
+  { href: '/reference/enemies/', icon: 'warning' },
+  { href: '/reference/cells/', icon: 'puzzle' },
+  { href: '/reference/hazards/', icon: 'sun' },
+  { href: '/reference/encounters/', icon: 'open-book' },
+] as const;
+const floorBands = ['01–02', '03–04', '05–07', '08–09', '10'];
+---
+
+<div class="guide-home">
+  <p class="eyebrow">{t.eyebrow}</p>
+  <h1 id="_top" data-page-title>
+    {t.title[0]}
+    <br />
+    {t.title[1]}
+  </h1>
+  <p class="intro">{t.intro}</p>
+  <div class="home-actions">
+    <a class="primary-link" href={localizedPath('/reference/floors/', locale)}>
+      {t.explore} <Icon name="right-arrow" size="18" />
+    </a>
+    <a
+      class="secondary-link"
+      href={localizedPath('/getting-started/first-run/', locale)}
+    >
+      {t.start} <Icon name="right-arrow" size="15" />
+    </a>
+  </div>
+
+  <GuideBanner art="maze" />
+
+  <section class="floor-section" aria-labelledby="floor-heading">
+    <div class="section-heading">
+      <h2 id="floor-heading">{t.path}</h2>
+      <span>{t.floorCaption}</span>
+    </div>
+    <a
+      class="floor-path"
+      href={localizedPath('/reference/floors/', locale)}
+      aria-label={t.floorLink}
+    >
+      {floorBands.map((floors, index) => (
+        <div class="zone">
+          <span class="floor-number">{floors}</span>
+          <span class="zone-name">{t.zones[index]}</span>
+        </div>
+      ))}
+    </a>
+  </section>
+
+  <section aria-labelledby="guide-heading">
+    <div class="section-heading">
+      <h2 id="guide-heading">{t.find}</h2>
+      <span>{t.findCaption}</span>
+    </div>
+    <div class="chapter-grid">
+      {chapters.map((chapter, index) => (
+        <a class="chapter" href={localizedPath(chapter.href, locale)}>
+          <div class="chapter-top">
+            <span class="eyebrow">{t.chapters[index].label}</span>
+            <Icon name={chapter.icon} size="20" />
+          </div>
+          <h3>{t.chapters[index].title}</h3>
+          <p>{t.chapters[index].text}</p>
+          <span class="chapter-arrow" aria-hidden="true">
+            <Icon name="right-arrow" size="18" />
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <div class="field-note">
+    <span class="note-mark" aria-hidden="true">
+      i
+    </span>
+    <p>
+      <strong>{t.noteTitle}</strong> {t.note}
+      <a href={localizedPath('/about/', locale)}>{t.about}</a>
+    </p>
+  </div>
+</div>

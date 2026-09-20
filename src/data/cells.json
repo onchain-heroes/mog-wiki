@@ -1,0 +1,246 @@
+[
+  {
+    "id": "open-floor",
+    "name": "Open floor",
+    "category": "navigation",
+    "appearance": "Walkable ground between the dungeon walls.",
+    "behavior": "Ordinary floor lets you move through the maze.",
+    "response": "Plan a route around enemies, obstacles and visible hazards.",
+    "warning": "The floor artwork changes between biomes; its colour alone does not mean it damages you."
+  },
+  {
+    "id": "walls",
+    "name": "Walls and pillars",
+    "category": "navigation",
+    "appearance": "Solid room edges and blocks within rooms.",
+    "behavior": "Walls block movement and interrupt paths through a room.",
+    "response": "Use doorways and corridors to go around them.",
+    "warning": ""
+  },
+  {
+    "id": "rocks",
+    "name": "Rocks",
+    "category": "interactive",
+    "appearance": "Solid rocks sitting on the floor.",
+    "behavior": "Rocks block movement and cannot be smashed like pots or crates.",
+    "response": "Find a route around them.",
+    "warning": ""
+  },
+  {
+    "id": "wooden-walkways",
+    "name": "Wooden walkways",
+    "category": "navigation",
+    "appearance": "Wooden planks and ladder-like decorations across parts of a room.",
+    "behavior": "These are scenery rather than a separate climbing route.",
+    "response": "Keep following the walkable floor beneath the decoration.",
+    "warning": ""
+  },
+  {
+    "id": "torches",
+    "name": "Torches",
+    "category": "navigation",
+    "appearance": "Animated flames mounted on the dungeon walls.",
+    "behavior": "Torches light nearby parts of the room.",
+    "response": "Use the lit area to read the surroundings.",
+    "warning": ""
+  },
+  {
+    "id": "spikes",
+    "name": "Spikes",
+    "category": "hazard",
+    "appearance": "A floor plate with retracting and raised spikes.",
+    "behavior": "Spikes alternate with turns and hurt you when they rise beneath you.",
+    "response": "Watch their rhythm and the warning before crossing.",
+    "warning": "Attacking or waiting on the plate also advances its cycle."
+  },
+  {
+    "id": "wall-arrow-traps",
+    "name": "Wall arrow traps",
+    "category": "hazard",
+    "appearance": "A wall-mounted shooter with arrows travelling across the floor.",
+    "behavior": "The shooter fires repeatedly; arrows advance along a straight line as turns pass.",
+    "response": "Step out of the firing lane before an arrow reaches you.",
+    "warning": "There is no pressure plate to avoid: the shooter fires automatically."
+  },
+  {
+    "id": "lava",
+    "name": "Lava",
+    "category": "hazard",
+    "appearance": "Animated molten patches in the hot lower floors.",
+    "behavior": "Standing on the molten centre drains energy at the end of a turn.",
+    "response": "Route around the molten centre and move off it promptly if you land there.",
+    "warning": "Attacking or waiting while standing there still causes contact damage.",
+    "floors": [8, 9]
+  },
+  {
+    "id": "lightning-warning",
+    "name": "Lightning warning",
+    "category": "hazard",
+    "appearance": "A pulsing floor marker with an exclamation mark during a storm.",
+    "behavior": "The marked tile is about to be struck by lightning.",
+    "response": "Leave the marked tile on your next action.",
+    "warning": "This is a temporary storm warning, not a permanent terrain tile."
+  },
+  {
+    "id": "fountains",
+    "name": "Fountains",
+    "category": "recovery",
+    "appearance": "A glowing fountain against a wall, with a basin extending onto the floor.",
+    "behavior": "Stepping onto the tile at its base restores energy once; the fountain then dims.",
+    "response": "Walk onto the basin tile when you need energy.",
+    "warning": "Stepping onto it uses it even if your energy is already full."
+  },
+  {
+    "id": "shrine",
+    "name": "Shrine",
+    "category": "recovery",
+    "appearance": "A large shrine with a displayed healing price.",
+    "behavior": "Attack once to inspect it, then attack again to buy healing. Further uses can heal you again while you can pay and have energy missing.",
+    "response": "Read the current price before each use.",
+    "warning": "The displayed price rises with repeated healing."
+  },
+  {
+    "id": "pots",
+    "name": "Pots",
+    "category": "interactive",
+    "appearance": "Small pots in several shapes scattered through rooms.",
+    "behavior": "Pots block your path until you smash them and may release a pickup.",
+    "response": "Attack an adjacent pot to break it, then collect any drop.",
+    "warning": "A pot can turn out to be a mimic and attack you."
+  },
+  {
+    "id": "crates",
+    "name": "Crates",
+    "category": "interactive",
+    "appearance": "Wooden boxes on the dungeon floor.",
+    "behavior": "Crates block your path until you smash them and may release a pickup.",
+    "response": "Attack an adjacent crate, then check the cleared tile for a drop.",
+    "warning": ""
+  },
+  {
+    "id": "chests",
+    "name": "Chests",
+    "category": "interactive",
+    "appearance": "A closed chest on a dungeon tile.",
+    "behavior": "An ordinary chest opens when you move beside it and scatters pickups nearby.",
+    "response": "Approach from a clear tile, then collect the scattered drops.",
+    "warning": "A chest can spring a mimic ambush instead of opening."
+  },
+  {
+    "id": "golden-corn",
+    "name": "Golden Corn stalks",
+    "category": "interactive",
+    "appearance": "Swaying golden corn growing on a floor tile.",
+    "behavior": "During the MoG x YF event, breaking a stalk leaves a Golden Corn pickup.",
+    "response": "Attack the stalk, then step onto its drop.",
+    "warning": "This is an event feature; availability depends on the event being active."
+  },
+  {
+    "id": "floor-stairs",
+    "name": "Floor stairs",
+    "category": "navigation",
+    "appearance": "A stair tile marking the way onward.",
+    "behavior": "Stepping onto normal exit stairs opens a descent confirmation.",
+    "response": "Collect what you want before confirming the descent.",
+    "warning": ""
+  },
+  {
+    "id": "special-room-stairs",
+    "name": "Special-room stairs",
+    "category": "navigation",
+    "appearance": "A distinct entrance marker labelled with a room name.",
+    "behavior": "Stepping onto it offers entry to the indicated special room.",
+    "response": "Read the room label and confirm when ready.",
+    "warning": ""
+  },
+  {
+    "id": "wall-portals",
+    "name": "Wall portals",
+    "category": "navigation",
+    "appearance": "Animated glowing portals set into walls.",
+    "behavior": "Standing at a portal offers travel to its linked portal on the same floor.",
+    "response": "Review the displayed cost and confirm to teleport.",
+    "warning": "Teleporting does not take you to the next floor."
+  },
+  {
+    "id": "unknown-trainer",
+    "name": "Unknown Trainer",
+    "category": "interactive",
+    "appearance": "A character waiting against a dungeon wall.",
+    "behavior": "Offers an exchange: spend Energy and give up an eligible owned talent for a random new one.",
+    "response": "Bump the trainer, review the Energy cost, then choose which eligible talent to give up. The replacement is revealed after the swap.",
+    "warning": "Enhancements on the old talent are lost; the new talent starts unenhanced."
+  },
+  {
+    "id": "armory-pedestals",
+    "name": "Armory pedestals",
+    "category": "interactive",
+    "appearance": "Item icons displayed with prices in the Armory or Sanctum.",
+    "behavior": "Attack once to inspect an item, then again to purchase it when the purchase is allowed.",
+    "response": "Read the item description, price and inventory requirements before buying.",
+    "warning": ""
+  },
+  {
+    "id": "armory-shopkeeper",
+    "name": "Armory shopkeeper",
+    "category": "interactive",
+    "appearance": "A character standing among the Armory displays.",
+    "behavior": "The shopkeeper stands beside the items on sale; purchases use the item displays.",
+    "response": "Inspect the pedestal holding the item you want.",
+    "warning": ""
+  },
+  {
+    "id": "energy-orbs",
+    "name": "Energy orbs",
+    "category": "recovery",
+    "appearance": "Glowing energy pickups lying on the floor.",
+    "behavior": "Collecting an energy orb restores energy up to your maximum.",
+    "response": "Step onto it to collect it.",
+    "warning": "Some loose drops fade away if left for too many turns."
+  },
+  {
+    "id": "loose-pickups",
+    "name": "Loose pickups",
+    "category": "interactive",
+    "appearance": "Resource icons and experience orbs lying on the ground.",
+    "behavior": "Moving onto a pickup collects it. Some effects can collect nearby resources for you.",
+    "response": "Collect useful drops before leaving the room.",
+    "warning": "Flashing or fading drops are close to disappearing."
+  },
+  {
+    "id": "item-pickups",
+    "name": "Item pickups",
+    "category": "interactive",
+    "appearance": "A consumable item icon lying on a floor tile.",
+    "behavior": "You must step directly onto an item to pick it up; a full inventory opens an inventory choice.",
+    "response": "Check your current item before choosing a replacement.",
+    "warning": "Nearby resource collection effects do not automatically collect items."
+  },
+  {
+    "id": "frozen-pickups",
+    "name": "Frozen pickups",
+    "category": "interactive",
+    "appearance": "A pickup encased in an ice block during a Blizzard.",
+    "behavior": "Ice prevents collection until you strike it. The frozen drop does not thaw by waiting.",
+    "response": "Strike the ice, then collect the revealed pickup.",
+    "warning": "Its disappearance timer pauses while it is frozen and resumes after the ice breaks."
+  },
+  {
+    "id": "boss-reward-chest",
+    "name": "Boss reward chest",
+    "category": "interactive",
+    "appearance": "A large chest left after the final boss falls.",
+    "behavior": "The chest blocks its space and opens after repeated attacks, releasing its reward pickups.",
+    "response": "Keep attacking the chest until it opens, then collect the drops before taking the exit.",
+    "warning": ""
+  },
+  {
+    "id": "boss-exit-gate",
+    "name": "Boss exit gate",
+    "category": "navigation",
+    "appearance": "A barred passage guarding the stairs in the final arena.",
+    "behavior": "The gate blocks the exit while the boss is alive and opens after its defeat.",
+    "response": "Defeat the boss, collect the rewards, then walk to the exit stairs to finish the run.",
+    "warning": ""
+  }
+]

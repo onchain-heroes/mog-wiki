@@ -1,0 +1,63 @@
+---
+import { media } from '../lib/catalogues';
+interface Props {
+  id: string;
+  label: string;
+  size?: number;
+}
+const { id, label, size = 88 } = Astro.props;
+const sprite = media[id];
+if (!sprite) throw new Error(`Missing reviewed illustration for ${id}`);
+const scale = size / Math.max(sprite.frameWidth, sprite.frameHeight);
+---
+
+<span
+  class="game-sprite"
+  data-animated={sprite.frames > 1}
+  role={label ? 'img' : undefined}
+  aria-label={label || undefined}
+  aria-hidden={!label ? 'true' : undefined}
+  style={`--frame-w:${sprite.frameWidth * scale}px;--frame-h:${sprite.frameHeight * scale}px;--sheet-w:${sprite.width * scale}px;--offset-x:${sprite.column * sprite.frameWidth * scale}px;--offset-y:${sprite.row * sprite.frameHeight * scale}px;--travel:${sprite.frames * sprite.frameWidth * scale}px;--frames:${sprite.frames}`}
+>
+  <img
+    src={sprite.src}
+    alt=""
+    width={sprite.width}
+    height={sprite.height}
+    loading="lazy"
+    decoding="async"
+  />
+</span>
+
+<style>
+  .game-sprite {
+    display: inline-block;
+    position: relative;
+    width: var(--frame-w);
+    height: var(--frame-h);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .game-sprite img {
+    position: absolute;
+    width: var(--sheet-w);
+    max-width: none;
+    height: auto;
+    left: calc(-1 * var(--offset-x));
+    top: calc(-1 * var(--offset-y));
+    image-rendering: pixelated;
+  }
+  :global([data-animate='true']) .game-sprite[data-animated='true'] img {
+    animation: sprite-frames 1s steps(var(--frames)) infinite;
+  }
+  @keyframes sprite-frames {
+    to {
+      transform: translateX(calc(-1 * var(--travel)));
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :global([data-animate='true']) .game-sprite[data-animated='true'] img {
+      animation: none;
+    }
+  }
+</style>

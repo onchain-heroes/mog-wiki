@@ -1,0 +1,47 @@
+---
+interface Props {
+  art: 'maze' | 'arcade';
+  compact?: boolean;
+}
+const { art, compact = false } = Astro.props;
+const size =
+  art === 'maze' ? { width: 1120, height: 590 } : { width: 960, height: 640 };
+---
+
+<div
+  class:list={['guide-banner', { compact }]}
+  data-art={art}
+  aria-hidden="true"
+>
+  <img
+    src={`/media/art/${art}.webp`}
+    {...size}
+    alt=""
+    loading="lazy"
+    decoding="async"
+  />
+</div>
+
+<style>
+  .guide-banner {
+    margin-block: 1.5rem 2rem;
+    overflow: hidden;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.65rem;
+    background: #191827;
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: clamp(9rem, 19vw, 15rem);
+    object-fit: cover;
+    object-position: center 45%;
+    margin: 0;
+  }
+  [data-art='maze'] img {
+    object-position: center 25%;
+  }
+  .compact img {
+    height: clamp(7rem, 12vw, 10rem);
+  }
+</style>

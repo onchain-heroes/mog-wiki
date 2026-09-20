@@ -1,0 +1,76 @@
+{
+  "clips": {
+    "lightning": {
+      "width": 1200,
+      "height": 900,
+      "gifWidth": 900,
+      "gifHeight": 675
+    },
+    "explosion": {
+      "width": 1200,
+      "height": 900,
+      "gifWidth": 900,
+      "gifHeight": 675
+    },
+    "ice": {
+      "width": 1200,
+      "height": 900,
+      "gifWidth": 900,
+      "gifHeight": 675
+    },
+    "spikes": {
+      "width": 1200,
+      "height": 900,
+      "gifWidth": 900,
+      "gifHeight": 675
+    },
+    "fountain": {
+      "width": 1200,
+      "height": 900,
+      "gifWidth": 900,
+      "gifHeight": 675
+    },
+    "mimic": {
+      "width": 1200,
+      "height": 900,
+      "gifWidth": 900,
+      "gifHeight": 675
+    },
+    "heatwave": {
+      "width": 1200,
+      "height": 900,
+      "gifWidth": 900,
+      "gifHeight": 675
+    },
+    "gale": {
+      "width": 1200,
+      "height": 900,
+      "gifWidth": 900,
+      "gifHeight": 675
+    },
+    "miasma": {
+      "width": 1200,
+      "height": 900,
+      "gifWidth": 900,
+      "gifHeight": 675
+    }
+  },
+  "rooms": {
+    "shrine": {
+      "width": 960,
+      "height": 720
+    },
+    "armory": {
+      "width": 960,
+      "height": 720
+    },
+    "sanctum": {
+      "width": 960,
+      "height": 720
+    },
+    "unknown-trainer": {
+      "width": 960,
+      "height": 720
+    }
+  }
+}
